@@ -3,7 +3,7 @@ export const profile = {
   title: "Technology Executive",
   subtitle: "COO | CTO | Chief AI Officer",
   location: "Sydney, Australia",
-  email: "aeisler@gmail.com",
+  email: "aaron.eisler@madeai.com.au",
   linkedin: "https://www.linkedin.com/in/aaroneisler/",
   phone: "0429 555 885",
 

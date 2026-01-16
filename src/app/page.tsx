@@ -15,6 +15,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Headshot */}
+          <div className="mb-8">
+            <img
+              src="/headshot.png"
+              alt="Aaron Eisler"
+              className="w-40 h-40 rounded-full mx-auto object-cover border-4 border-[var(--border)] shadow-lg"
+            />
+          </div>
+
           {/* Company logos */}
           <div className="flex justify-center items-center gap-6 mb-8 opacity-60">
             {profile.companies.slice(0, 4).map((company, index) => (

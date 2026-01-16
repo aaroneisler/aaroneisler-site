@@ -14,14 +14,28 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Headshot */}
-          <div className="mb-8">
-            <img
-              src="/headshot.png"
-              alt="Aaron Eisler"
-              className="w-40 h-40 rounded-full mx-auto object-cover border-4 border-[var(--border)] shadow-lg"
-            />
+        <div className="max-w-4xl mx-auto">
+          {/* Hero content with photo */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-10">
+            {/* Headshot */}
+            <div className="flex-shrink-0">
+              <img
+                src="/headshot.png"
+                alt="Aaron Eisler"
+                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-[var(--border)] shadow-lg"
+              />
+            </div>
+
+            {/* Name and title */}
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3">
+                {profile.name}
+              </h1>
+              <p className="text-xl sm:text-2xl text-[var(--primary)] font-medium mb-2">
+                {profile.subtitle}
+              </p>
+              <p className="text-[var(--secondary)]">{profile.location}</p>
+            </div>
           </div>
 
           {/* Company logos */}
@@ -36,14 +50,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Name and title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            {profile.name}
-          </h1>
-          <p className="text-xl sm:text-2xl text-[var(--primary)] font-medium mb-4">
-            {profile.subtitle}
-          </p>
-          <p className="text-[var(--secondary)] mb-8">{profile.location}</p>
+          <div className="text-center">
 
           {/* Key highlights */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -89,6 +96,7 @@ export default function Home() {
               </svg>
               LinkedIn
             </a>
+          </div>
           </div>
         </div>
       </section>

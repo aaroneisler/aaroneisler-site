@@ -5,6 +5,7 @@ import AIChatModal from "@/components/AIChatModal";
 import ExperienceCard from "@/components/ExperienceCard";
 import SkillsMatrix from "@/components/SkillsMatrix";
 import FitAssessment from "@/components/FitAssessment";
+import HighlightPill from "@/components/HighlightPill";
 import { profile, experience, skills, education } from "@/data/profile";
 
 export default function Home() {
@@ -71,19 +72,11 @@ export default function Home() {
             {/* Key highlights */}
             <div className="flex flex-wrap justify-center gap-3 mb-10">
               {profile.highlights.map((highlight, index) => (
-                <span
+                <HighlightPill
                   key={index}
-                  className="text-sm font-medium transition-all"
-                  style={{
-                    padding: '0.618em 1.272em',
-                    background: 'var(--surface)',
-                    border: '1px solid var(--border)',
-                    borderRadius: 'var(--radius-full)',
-                    boxShadow: 'var(--shadow-sm)'
-                  }}
-                >
-                  {highlight}
-                </span>
+                  headline={highlight.headline}
+                  story={highlight.story}
+                />
               ))}
             </div>
 

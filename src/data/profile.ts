@@ -13,10 +13,22 @@ Currently building MadeAI, a workflow intelligence company, while seeking execut
 that leverage my unique combination of operational depth and AI/automation expertise.`,
 
   highlights: [
-    "$200M P&L management",
-    "11-company M&A integration",
-    "100+ person team leadership",
-    "20% productivity gains through AI/automation",
+    {
+      headline: "$200M P&L management",
+      story: "At Orro Group, held full P&L responsibility across Network, Cloud, Cyber, and Collaboration services — turning operational complexity into profitable growth."
+    },
+    {
+      headline: "11-company M&A integration",
+      story: "Led the operational unification of 11 acquired companies into a single scalable ICT organisation, delivering 2% EBITDA improvement while preserving what made each team valuable."
+    },
+    {
+      headline: "100+ person team leadership",
+      story: "Built and led cross-functional teams across engineering, service delivery, and operations — creating cultures where people do their best work."
+    },
+    {
+      headline: "20% productivity gains through AI/automation",
+      story: "At Telstra, built the automation practice from scratch — $12M in value in year one. Not just implementing tools, but fundamentally changing how teams think about work."
+    },
   ],
 
   companies: ["Orro Group", "Telstra Purple", "Telstra", "Dimension Data", "Cisco"],

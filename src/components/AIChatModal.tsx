@@ -89,18 +89,39 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-2xl h-[80vh] bg-[var(--background)] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-[var(--border)]">
+      <div
+        className="relative w-full max-w-2xl h-[80vh] flex flex-col overflow-hidden animate-scale-in"
+        style={{
+          background: 'var(--background)',
+          borderRadius: 'var(--radius-xl)',
+          boxShadow: 'var(--shadow-lg)',
+          border: '1px solid var(--border)'
+        }}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-[var(--border)]">
+        <div
+          className="flex items-center justify-between"
+          style={{ padding: 'var(--space-lg)', borderBottom: '1px solid var(--border)' }}
+        >
           <div>
-            <h2 className="text-lg font-semibold">Ask AI about Aaron</h2>
-            <p className="text-sm text-[var(--secondary)]">
+            <h2
+              className="font-semibold"
+              style={{ fontSize: 'var(--text-lg)' }}
+            >
+              Ask AI about Aaron
+            </h2>
+            <p className="text-sm" style={{ color: 'var(--secondary)' }}>
               Get detailed answers about experience, skills, and fit
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-[var(--card)] rounded-lg transition-colors"
+            className="transition-all hover:scale-110"
+            style={{
+              padding: 'var(--space-sm)',
+              borderRadius: 'var(--radius-md)',
+              background: 'var(--state-hover)'
+            }}
           >
             <svg
               className="w-5 h-5"
@@ -119,7 +140,10 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div
+          className="flex-1 overflow-y-auto space-y-4"
+          style={{ padding: 'var(--space-lg)' }}
+        >
           {messages.map((message, index) => (
             <div
               key={index}
@@ -128,28 +152,45 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
               }`}
             >
               <div
-                className={`max-w-[80%] p-3 rounded-2xl ${
-                  message.role === "user"
-                    ? "bg-[var(--primary)] text-white rounded-br-md"
-                    : "bg-[var(--card)] border border-[var(--border)] rounded-bl-md"
-                }`}
+                className="max-w-[80%]"
+                style={{
+                  padding: 'var(--space-md)',
+                  borderRadius: message.role === "user"
+                    ? 'var(--radius-lg) var(--radius-lg) var(--radius-sm) var(--radius-lg)'
+                    : 'var(--radius-lg) var(--radius-lg) var(--radius-lg) var(--radius-sm)',
+                  background: message.role === "user" ? 'var(--primary)' : 'var(--card)',
+                  color: message.role === "user" ? 'var(--on-primary)' : 'inherit',
+                  border: message.role === "user" ? 'none' : '1px solid var(--border)'
+                }}
               >
-                <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                <p className="text-sm whitespace-pre-wrap" style={{ lineHeight: 'var(--phi)' }}>
+                  {message.content}
+                </p>
               </div>
             </div>
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-[var(--card)] border border-[var(--border)] p-3 rounded-2xl rounded-bl-md">
+              <div
+                style={{
+                  padding: 'var(--space-md)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-lg) var(--radius-lg) var(--radius-lg) var(--radius-sm)'
+                }}
+              >
                 <div className="flex space-x-2">
-                  <div className="w-2 h-2 bg-[var(--secondary)] rounded-full animate-bounce" />
                   <div
-                    className="w-2 h-2 bg-[var(--secondary)] rounded-full animate-bounce"
-                    style={{ animationDelay: "0.1s" }}
+                    className="w-2 h-2 rounded-full animate-bounce"
+                    style={{ background: 'var(--secondary)' }}
                   />
                   <div
-                    className="w-2 h-2 bg-[var(--secondary)] rounded-full animate-bounce"
-                    style={{ animationDelay: "0.2s" }}
+                    className="w-2 h-2 rounded-full animate-bounce"
+                    style={{ background: 'var(--secondary)', animationDelay: "0.1s" }}
+                  />
+                  <div
+                    className="w-2 h-2 rounded-full animate-bounce"
+                    style={{ background: 'var(--secondary)', animationDelay: "0.2s" }}
                   />
                 </div>
               </div>
@@ -160,8 +201,11 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
 
         {/* Suggested Questions */}
         {messages.length <= 1 && (
-          <div className="px-4 pb-2">
-            <p className="text-xs text-[var(--secondary)] mb-2">
+          <div style={{ padding: '0 var(--space-lg) var(--space-sm)' }}>
+            <p
+              className="text-xs"
+              style={{ color: 'var(--secondary)', marginBottom: 'var(--space-sm)' }}
+            >
               Try asking:
             </p>
             <div className="flex flex-wrap gap-2">
@@ -169,7 +213,13 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                 <button
                   key={index}
                   onClick={() => setInput(question)}
-                  className="text-xs px-3 py-1.5 bg-[var(--card)] border border-[var(--border)] rounded-full hover:border-[var(--primary)] transition-colors"
+                  className="text-xs transition-all hover:scale-[1.02]"
+                  style={{
+                    padding: '0.5em 1em',
+                    background: 'var(--card)',
+                    border: '1px solid var(--border)',
+                    borderRadius: 'var(--radius-full)'
+                  }}
                 >
                   {question}
                 </button>
@@ -179,20 +229,35 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
         )}
 
         {/* Input */}
-        <form onSubmit={handleSubmit} className="p-4 border-t border-[var(--border)]">
+        <form
+          onSubmit={handleSubmit}
+          style={{ padding: 'var(--space-lg)', borderTop: '1px solid var(--border)' }}
+        >
           <div className="flex gap-2">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about Aaron's experience, skills, or fit..."
-              className="flex-1 px-4 py-2 bg-[var(--card)] border border-[var(--border)] rounded-xl focus:outline-none focus:border-[var(--primary)] transition-colors"
+              className="flex-1 focus:outline-none transition-colors"
+              style={{
+                padding: '0.618em 1em',
+                background: 'var(--card)',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-lg)'
+              }}
               disabled={isLoading}
             />
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="px-4 py-2 bg-[var(--primary)] text-white rounded-xl hover:bg-[var(--primary-light)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              style={{
+                padding: '0.618em 1em',
+                background: 'var(--primary)',
+                color: 'var(--on-primary)',
+                borderRadius: 'var(--radius-lg)'
+              }}
             >
               <svg
                 className="w-5 h-5"

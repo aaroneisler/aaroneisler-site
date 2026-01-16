@@ -111,10 +111,24 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
   };
 
   return (
-    <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Fit Assessment Tool</h3>
-        <p className="text-sm text-[var(--secondary)]">
+    <div
+      className="transition-all"
+      style={{
+        padding: 'var(--space-lg)',
+        background: 'var(--card)',
+        border: '1px solid var(--border)',
+        borderRadius: 'var(--radius-lg)',
+        boxShadow: 'var(--shadow-sm)'
+      }}
+    >
+      <div style={{ marginBottom: 'var(--space-lg)' }}>
+        <h3
+          className="font-semibold"
+          style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-sm)' }}
+        >
+          Fit Assessment Tool
+        </h3>
+        <p className="text-sm" style={{ color: 'var(--secondary)' }}>
           Paste a job description and get an honest assessment of whether Aaron
           is a good fit. No sugar-coating — if it's not a match, we'll tell you.
         </p>
@@ -125,13 +139,27 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
           value={jobDescription}
           onChange={(e) => setJobDescription(e.target.value)}
           placeholder="Paste the job description here..."
-          className="w-full h-48 p-4 bg-[var(--background)] border border-[var(--border)] rounded-xl resize-none focus:outline-none focus:border-[var(--primary)] transition-colors text-sm"
+          className="w-full resize-none focus:outline-none transition-colors text-sm"
+          style={{
+            height: '12rem',
+            padding: 'var(--space-md)',
+            background: 'var(--background)',
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--radius-lg)'
+          }}
         />
 
         <button
           onClick={handleAnalyze}
           disabled={isAnalyzing || !jobDescription.trim()}
-          className="w-full py-3 bg-[var(--primary)] text-white rounded-xl hover:bg-[var(--primary-light)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+          className="w-full font-medium transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          style={{
+            padding: '0.786em 1.618em',
+            background: 'var(--primary)',
+            color: 'var(--on-primary)',
+            borderRadius: 'var(--radius-lg)',
+            boxShadow: 'var(--shadow-sm)'
+          }}
         >
           {isAnalyzing ? (
             <span className="flex items-center justify-center gap-2">
@@ -162,23 +190,32 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
         </button>
 
         {result && (
-          <div className="animate-fade-in space-y-4 pt-4 border-t border-[var(--border)]">
+          <div
+            className="animate-fade-in space-y-4"
+            style={{ paddingTop: 'var(--space-md)', borderTop: '1px solid var(--border)' }}
+          >
             {/* Fit Level Badge */}
             <div
-              className={`inline-block px-4 py-2 rounded-full border font-medium ${getFitColor(
-                result.fitLevel
-              )}`}
+              className={`inline-block font-medium ${getFitColor(result.fitLevel)}`}
+              style={{
+                padding: '0.618em 1.272em',
+                borderRadius: 'var(--radius-full)',
+                border: '1px solid currentColor'
+              }}
             >
               {getFitLabel(result.fitLevel)}
             </div>
 
             {/* Summary */}
-            <p className="text-sm">{result.summary}</p>
+            <p className="text-sm" style={{ lineHeight: 'var(--phi)' }}>{result.summary}</p>
 
             {/* Strengths */}
             {result.strengths.length > 0 && (
               <div>
-                <h4 className="text-sm font-semibold text-green-600 dark:text-green-400 mb-2">
+                <h4
+                  className="text-sm font-semibold"
+                  style={{ color: '#16a34a', marginBottom: 'var(--space-sm)' }}
+                >
                   What Transfers
                 </h4>
                 <ul className="space-y-1">
@@ -187,7 +224,7 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
                       key={index}
                       className="text-sm flex items-start gap-2"
                     >
-                      <span className="text-green-500">✓</span>
+                      <span style={{ color: '#22c55e' }}>✓</span>
                       <span>{strength}</span>
                     </li>
                   ))}
@@ -198,7 +235,10 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
             {/* Gaps */}
             {result.gaps.length > 0 && (
               <div>
-                <h4 className="text-sm font-semibold text-red-600 dark:text-red-400 mb-2">
+                <h4
+                  className="text-sm font-semibold"
+                  style={{ color: '#dc2626', marginBottom: 'var(--space-sm)' }}
+                >
                   Potential Gaps
                 </h4>
                 <ul className="space-y-1">
@@ -207,7 +247,7 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
                       key={index}
                       className="text-sm flex items-start gap-2"
                     >
-                      <span className="text-red-500">•</span>
+                      <span style={{ color: '#ef4444' }}>•</span>
                       <span>{gap}</span>
                     </li>
                   ))}
@@ -217,9 +257,20 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
 
             {/* Recommendation */}
             {result.recommendation && (
-              <div className="p-4 bg-[var(--background)] rounded-lg">
-                <h4 className="text-sm font-semibold mb-1">Recommendation</h4>
-                <p className="text-sm text-[var(--secondary)]">
+              <div
+                style={{
+                  padding: 'var(--space-md)',
+                  background: 'var(--surface-variant)',
+                  borderRadius: 'var(--radius-md)'
+                }}
+              >
+                <h4
+                  className="text-sm font-semibold"
+                  style={{ marginBottom: 'var(--space-xs)' }}
+                >
+                  Recommendation
+                </h4>
+                <p className="text-sm" style={{ color: 'var(--secondary)', lineHeight: 'var(--phi)' }}>
                   {result.recommendation}
                 </p>
               </div>

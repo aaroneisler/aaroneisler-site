@@ -12,10 +12,22 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
   return (
     <div className="grid md:grid-cols-3 gap-6">
       {/* Strong */}
-      <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
+      <div
+        className="transition-all"
+        style={{
+          padding: 'var(--space-lg)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--radius-lg)',
+          boxShadow: 'var(--shadow-sm)'
+        }}
+      >
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-3 h-3 bg-green-500 rounded-full" />
-          <h3 className="font-semibold text-green-600 dark:text-green-400">
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ background: '#22c55e' }}
+          />
+          <h3 className="font-semibold" style={{ color: '#16a34a' }}>
             Strong
           </h3>
         </div>
@@ -26,7 +38,8 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
               className="text-sm flex items-start gap-2"
             >
               <svg
-                className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"
+                className="w-4 h-4 mt-0.5 flex-shrink-0"
+                style={{ color: '#22c55e' }}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -43,10 +56,22 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
       </div>
 
       {/* Moderate */}
-      <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
+      <div
+        className="transition-all"
+        style={{
+          padding: 'var(--space-lg)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--radius-lg)',
+          boxShadow: 'var(--shadow-sm)'
+        }}
+      >
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-          <h3 className="font-semibold text-yellow-600 dark:text-yellow-400">
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ background: '#eab308' }}
+          />
+          <h3 className="font-semibold" style={{ color: '#ca8a04' }}>
             Moderate
           </h3>
         </div>
@@ -57,7 +82,8 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
               className="text-sm flex items-start gap-2"
             >
               <svg
-                className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0"
+                className="w-4 h-4 mt-0.5 flex-shrink-0"
+                style={{ color: '#eab308' }}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -74,10 +100,22 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
       </div>
 
       {/* Gaps */}
-      <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
+      <div
+        className="transition-all"
+        style={{
+          padding: 'var(--space-lg)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--radius-lg)',
+          boxShadow: 'var(--shadow-sm)'
+        }}
+      >
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-3 h-3 bg-red-500 rounded-full" />
-          <h3 className="font-semibold text-red-600 dark:text-red-400">
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ background: '#ef4444' }}
+          />
+          <h3 className="font-semibold" style={{ color: '#dc2626' }}>
             Gaps (Honest Assessment)
           </h3>
         </div>
@@ -88,7 +126,8 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
               className="text-sm flex items-start gap-2"
             >
               <svg
-                className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0"
+                className="w-4 h-4 mt-0.5 flex-shrink-0"
+                style={{ color: '#ef4444' }}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -102,7 +141,10 @@ export default function SkillsMatrix({ skills }: SkillsMatrixProps) {
             </li>
           ))}
         </ul>
-        <p className="text-xs text-[var(--secondary)] mt-4 italic">
+        <p
+          className="text-xs mt-4 italic"
+          style={{ color: 'var(--secondary)' }}
+        >
           Transparency builds trust. These are areas where I'd lean on team expertise.
         </p>
       </div>

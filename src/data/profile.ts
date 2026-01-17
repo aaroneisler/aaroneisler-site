@@ -7,23 +7,23 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/aaroneisler/",
   phone: "0429 555 885",
 
-  summary: `Most executives are either operations people or technology people. I'm both. Chief Architect for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company. 25 years of doing the hard things — the renewals at risk, the integrations that matter, the platforms that didn't exist.`,
+  summary: `Most executives are either operations people or technology people. I'm both. CTO for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company. 25 years of doing the hard things — the renewals at risk, the integrations that matter, the platforms that didn't exist.`,
 
   highlights: [
     {
-      headline: "$1B+ in relationships saved",
-      story: "Defence, CBA, Westpac at Telstra. QANTAS, Jetstar, Flight Centre, Australia Post at Orro. When it's at risk, they send me in."
+      headline: "$10B+ in renewals",
+      story: "QANTAS, Jetstar, Flight Centre, Australia Post, CBA, Westpac, Defence. Many were at risk. They sent me in. Every one renewed."
     },
     {
-      headline: "Chief Architect × 3 industries",
-      story: "Woolworths. CBA. Defence. Retail, banking, government — all trusted me with their architecture."
+      headline: "CTO × 3 industries",
+      story: "Woolworths, CBA, Defence. Three very different industries, same level of trust."
     },
     {
       headline: "Built automation before it was cool",
       story: "2018: No practice existed. I built the framework, platform, commercial model. $12M value in year one. All Big 4 banks delivered."
     },
     {
-      headline: "Zero → $2M in 18 months",
+      headline: "Startup to $2M",
       story: "AetherX: blank page to first revenue in 90 days. $2M by month 18. I don't just run things — I build them."
     },
   ],

@@ -7,7 +7,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/aaroneisler/",
   phone: "0429 555 885",
 
-  summary: `Most executives are either operations people or technology people. I'm both. CTO for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company. 25 years of doing the hard things — the renewals at risk, the integrations that matter, the platforms that didn't exist.`,
+  summary: `Most executives are either operations people or technology people. I'm both. And when it's broken — the renewal at risk, the integration that's stuck, the platform that doesn't exist — I'm who they send. CTO for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company.`,
 
   highlights: [
     {

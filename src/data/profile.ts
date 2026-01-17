@@ -51,10 +51,10 @@ export const experience = [
       "$200M P&L across Network, Cloud, Cyber, and Collaboration services",
     ],
     aiContext: {
-      situation: "Orro had acquired 11 separate companies operating as fragmented businesses with different systems, processes, and cultures. The mandate was to unify them into a scalable ICT organisation capable of competing at enterprise scale.",
-      approach: "I led an end-to-end transformation, industrialising core operations by embedding robotics, workflow automation, and AI into every facet of the service lifecycle. From customer onboarding through to billing and support. We deliberately shifted away from legacy tools and decentralised processes, replacing them with platform-based operating frameworks.",
-      results: "Delivered 2% EBITDA increase through operational efficiency. Built a digitised operating engine that allows Orro to compete at enterprise scale while preserving agility. Deployed AI-led solutions that significantly reduced cycle time, revenue leakage, and manual effort.",
-      lessonsLearned: "M&A integration success depends on moving fast on operational unification while being patient with cultural integration. The technology transformation must happen in parallel with people change management. Neither can wait for the other.",
+      situation: "Orro had bought 11 companies in five years. On paper, one company. In reality, 11 different ways of doing everything. 11 billing systems. 11 cultures. Customers were frustrated. Margins were leaking. The board wanted scale, but nobody could agree on what that meant.",
+      approach: "I didn't start with a transformation roadmap. I started by sitting with the teams who were losing deals and the ones cleaning up delivery failures. Found out we were quoting contracts we couldn't deliver profitably. Found billing errors nobody was catching. Built automation to fix the leaks first. Then standardised the operating model piece by piece. Some teams came willingly. Some needed convincing. A few needed replacing.",
+      results: "2% EBITDA improvement in under two years. QANTAS, Jetstar, Flight Centre, Australia Post renewed. These were relationships that were on the edge when I arrived. AI tools now catch revenue leakage that used to slip through. The business can quote, win, and deliver consistently now.",
+      lessonsLearned: "M&A integration success depends on moving fast on operational unification while being patient with cultural integration. You can't wait for everyone to be comfortable. But you also can't force culture. The technology transformation and people change have to happen together.",
     },
   },
   {
@@ -70,10 +70,10 @@ export const experience = [
       "End-to-end accountability: strategy, sales, delivery, finance",
     ],
     aiContext: {
-      situation: "Founded a new company to deliver cutting-edge technology services in mission-critical networks. The vision was to focus on secure network automation across professional services, managed services, and new products.",
-      approach: "Took responsibility for creating the business plan, developing the go-to-market strategy, and executing the plan. Led development of new products and services while managing budgets to ensure financial stability. Built the AetherX India operations and established relationships with key stakeholders.",
-      results: "Achieved $100K revenue within first three months. Built the business to $2M in 18 months. Successfully delivered mission-critical solutions for clients in highly regulated industries.",
-      lessonsLearned: "Startup success in B2B requires landing anchor clients quickly to prove the model, then building repeatable processes before scaling. The founder must be deeply involved in early sales while simultaneously building operational capability.",
+      situation: "After 20 years working for big companies, I wanted to know if I could build something from nothing. Not a side project. A real business. My co-founder and I picked one of the hardest spaces: operational technology. Power grids, water systems, critical infrastructure. These networks can't go down. The clients don't tolerate excuses.",
+      approach: "First 90 days were about survival. We needed a paying client before the savings ran out. I was writing proposals, doing demos, closing deals, and then delivering the work myself. No sales team. No delivery team. Just us. Once we had proof the model worked, I built operations in India to scale delivery without burning through cash. Every dollar was watched.",
+      results: "$100K in the first 90 days. $2M by month 18. Clients in energy, utilities, and defence. We proved you could build a profitable services business in a space where the big players were slow and expensive.",
+      lessonsLearned: "Startup survival comes down to landing an anchor client fast. You need proof before you need scale. And the founder has to sell and deliver at the same time until there's enough cash to hire. There's no other way.",
     },
   },
   {
@@ -91,10 +91,10 @@ export const experience = [
       "106% billable utilisation, 38 LEAN initiatives, transformed national delivery model",
     ],
     aiContext: {
-      situation: "Seven years at Telstra spanning four senior roles: Head of Platforms & Services, Head of Automation & Robotics, National Professional Services Manager, and Business Consulting Manager. Each role built on the last. Started with client-facing architecture and consulting, then ran national delivery, then built the automation practice, then led platforms.",
-      approach: "The thread across all roles was transformation through execution. Built the automation capability from nothing. Framework, platform, commercial model, governance. Took struggling accounts and turned them around. Created new practices where none existed. Applied LEAN methodology systematically. Always focused on measurable outcomes.",
-      results: "Built Rapid platform delivering $12M value in year one. Delivered automation to all Big 4 banks, Qantas, Origin, BP, Australia Post. Won Australia's first Arista SDN ($27M). Renewed $1B+ in contracts that were at risk. Created wireless practice with $3.6M pipeline. Achieved 106% utilisation. Transformed how Telstra delivered services.",
-      lessonsLearned: "The biggest impact comes from staying long enough to see transformation through. Seven years let me build on each role. Relationships, credibility, and institutional knowledge compound. The hardest part of automation isn't technology. It's changing how people think about work.",
+      situation: "I joined Telstra as a consulting manager and left seven years later running platforms for the enterprise business. Four different roles. Each one came because I fixed something that was broken. CBA was struggling. Defence was at risk. The automation practice didn't exist. National delivery was missing targets. These weren't promotions handed out. They were problems nobody else wanted.",
+      approach: "The CBA and Defence accounts were my first test. Big relationships, unhappy clients. I moved in, understood what was actually failing, and rebuilt trust through delivery. When that worked, they gave me the automation practice to build from scratch. No team, no platform, no clients. I built the framework, hired the people, created the commercial model, and sold the first deals myself. Then did the same for wireless.",
+      results: "Rapid automation platform delivered $12M value in year one. All Big 4 banks signed up. Australia's first Arista SDN ($27M) won and delivered. CBA, Westpac, Defence renewed. Wireless practice hit $3.6M pipeline in year one. 106% utilisation across the team. When I left, the practices I built were still running.",
+      lessonsLearned: "The biggest impact comes from staying long enough to see transformation through. Seven years let me build on each role. Relationships and credibility compound. And the hardest part of automation isn't the technology. It's convincing people their job is about to change.",
     },
   },
   {
@@ -110,10 +110,10 @@ export const experience = [
       "Increased revenue by 35% while maintaining gross profit",
     ],
     aiContext: {
-      situation: "Managing security practice and enterprise architecture for major retail client (Woolworths), with responsibility for compliance, risk management, and technology strategy across a complex multi-vendor environment.",
-      approach: "Owned PCI compliance process and risk register. Chaired Architecture Review Board implementing TOGAF-based Architecture Development Method. Redesigned sales process for security deals with new qualification model.",
-      results: "Delivered Australia's first Cisco Application Centric Infrastructure. $1M CAPEX with modelled 25% OPEX reduction. Achieved PCI DSS compliance generating $700K revenue. Increased revenue by 35% while maintaining gross profit. Sales process redesign increased hit rate by 25%.",
-      lessonsLearned: "Being first to market with new technology creates disproportionate credibility. The combination of technical depth and commercial acumen is rare and valuable in enterprise sales.",
+      situation: "Woolworths was my account. Biggest retailer in Australia, complex environment, dozens of vendors, and a CTO who didn't suffer fools. The previous architect had left and the relationship was shaky. They needed someone who could talk strategy with the executives and still get into the technical weeds when needed.",
+      approach: "I spent the first few months just listening. Sat in their architecture reviews. Understood their pain points. PCI compliance was a mess and costing them. I took ownership of fixing it. Then I pitched them on something nobody in Australia had done yet: Cisco ACI. New technology, real risk, but the OPEX savings were too big to ignore. I put my credibility on the line and made it work.",
+      results: "Australia's first Cisco ACI deployment. $1M CAPEX, 25% OPEX reduction modelled. PCI compliance sorted, which turned into $700K in services revenue. Grew the account 35% while holding margin. The CTO started asking for me by name on other projects.",
+      lessonsLearned: "Being first to market with new technology creates disproportionate credibility. Once you've done something nobody else has done, you're not competing on price anymore. Technical depth and commercial sense together is a rare combination. That's what opens doors.",
     },
   },
   {
@@ -128,10 +128,10 @@ export const experience = [
       "Where I learned the craft before leading teams",
     ],
     aiContext: {
-      situation: "Started career in hands-on technical roles, building the engineering foundation that would later inform leadership positions.",
-      approach: "Focused on mastering the technical craft. Troubleshooting, deployment, escalation support. Built credibility through deep technical competence.",
-      results: "Developed the technical depth that later enabled me to lead engineering teams and architect enterprise solutions. This foundation is why I can still get into the weeds when needed.",
-      lessonsLearned: "You can't lead technical teams effectively without having done the work yourself. The years on the tools built credibility that no MBA can replace.",
+      situation: "Before I led teams, I was the one on the tools. Cisco TAC meant taking escalations that the first-line engineers couldn't solve. The calls that came at 2am. The problems where the customer was already angry. At Optus, I was deploying networks for enterprise clients. Hands on keyboards, making it work.",
+      approach: "I treated every problem like a puzzle. Didn't matter if it was my fault or someone else's. The job was to fix it and understand why it broke. I kept notes on everything. Patterns in failures, shortcuts that worked, mistakes that taught me something. That habit stuck.",
+      results: "Built a reputation as someone who could solve the hard problems. That's what got me promoted out of engineering and into architecture. And later into leadership. The technical credibility I built in those years is still what earns trust with engineering teams today.",
+      lessonsLearned: "You can't lead technical teams effectively without having done the work yourself. Engineers know immediately if you've been in the trenches. The years on the tools built credibility that no MBA can replace.",
     },
   },
 ];

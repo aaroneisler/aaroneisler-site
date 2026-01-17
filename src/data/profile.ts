@@ -7,27 +7,24 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/aaroneisler/",
   phone: "0429 555 885",
 
-  summary: `A dynamic technology executive with 25+ years of experience across COO, CTO, and CIO roles,
-driving transformational growth through operational excellence and technology leadership.
-Currently building MadeAI, a workflow intelligence company, while seeking executive roles
-that leverage my unique combination of operational depth and AI/automation expertise.`,
+  summary: `Most executives are either operations people or technology people. I'm both. Chief Architect for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company. 25 years of doing the hard things — the renewals at risk, the integrations that matter, the platforms that didn't exist.`,
 
   highlights: [
     {
-      headline: "$200M P&L management",
-      story: "At Orro Group, held full P&L responsibility across Network, Cloud, Cyber, and Collaboration services — turning operational complexity into profitable growth."
+      headline: "$1B+ in relationships saved",
+      story: "Defence, CBA, Westpac at Telstra. QANTAS, Jetstar, Flight Centre, Australia Post at Orro. When it's at risk, they send me in."
     },
     {
-      headline: "11-company M&A integration",
-      story: "Led the operational unification of 11 acquired companies into a single scalable ICT organisation, delivering 2% EBITDA improvement while preserving what made each team valuable."
+      headline: "Chief Architect × 3 industries",
+      story: "Woolworths. CBA. Defence. Retail, banking, government — all trusted me with their architecture."
     },
     {
-      headline: "100+ person team leadership",
-      story: "Built and led cross-functional teams across engineering, service delivery, and operations — creating cultures where people do their best work."
+      headline: "Built automation before it was cool",
+      story: "2018: No practice existed. I built the framework, platform, commercial model. $12M value in year one. All Big 4 banks delivered."
     },
     {
-      headline: "20% productivity gains through AI/automation",
-      story: "At Telstra, built the automation practice from scratch — $12M in value in year one. Not just implementing tools, but fundamentally changing how teams think about work."
+      headline: "Zero → $2M in 18 months",
+      story: "AetherX: blank page to first revenue in 90 days. $2M by month 18. I don't just run things — I build them."
     },
   ],
 
@@ -42,10 +39,10 @@ export const experience = [
     period: "Oct 2023 – Nov 2025",
     logo: "/logos/orro.png",
     bullets: [
-      "Led integration of 11 companies into unified ICT organisation, delivering 2% EBITDA improvement",
-      "Managed $200M P&L across Network, Cloud, Cyber, and Collaboration services",
-      "Built and deployed AI solutions for contract analysis, billing integrity, and renewal forecasting",
-      "Drove strategic alignment improving service delivery and client satisfaction across national footprint",
+      "Unified 11 acquired companies into one operating model — 2% EBITDA improvement",
+      "Renewed QANTAS, Jetstar, Flight Centre, Australia Post — relationships I was brought in to save",
+      "Built AI solutions for contract analysis, billing integrity, renewal forecasting — in production, not pilots",
+      "$200M P&L across Network, Cloud, Cyber, and Collaboration services",
     ],
     aiContext: {
       situation: "Orro had acquired 11 separate companies operating as fragmented businesses with different systems, processes, and cultures. The mandate was to unify them into a scalable ICT organisation capable of competing at enterprise scale.",
@@ -61,10 +58,10 @@ export const experience = [
     period: "Jul 2022 – Sep 2023",
     logo: "/logos/aetherx.png",
     bullets: [
-      "Co-founded and built business to $2M revenue in 18 months",
-      "Led secure network automation initiatives for mission-critical solutions",
-      "Developed technology strategy across professional services, managed services, and new products",
-      "Managed end-to-end operations including financial management and risk mitigation",
+      "Co-founded and built to $2M revenue in 18 months — first revenue in 90 days",
+      "Specialised in OT (Operational Technology) — secure automation for critical infrastructure",
+      "Built India operations and established channel partnerships",
+      "End-to-end accountability: strategy, sales, delivery, finance",
     ],
     aiContext: {
       situation: "Founded a new company to deliver cutting-edge technology services in mission-critical networks. The vision was to focus on secure network automation across professional services, managed services, and new products.",
@@ -74,59 +71,24 @@ export const experience = [
     },
   },
   {
-    id: "telstra-purple",
-    company: "Telstra Purple",
-    role: "Head of Platforms & Services",
-    period: "Mar 2021 – Jul 2022",
+    id: "telstra",
+    company: "Telstra / Telstra Purple",
+    role: "Senior Leadership Roles",
+    period: "Jun 2015 – Jul 2022",
     logo: "/logos/telstra.png",
     bullets: [
-      "Led platform and services innovation, developing cloud-native solutions",
-      "Improved service delivery models through cutting-edge technology solutions",
-      "Managed automation of IT operations, improving performance and reducing costs",
+      "Built 'Rapid' automation platform from scratch — $12M value in year one, delivered into all Big 4 banks",
+      "Won and delivered Australia's first Arista SDN ($27M) — full lifecycle from bid to transition",
+      "Renewed at-risk contracts: CBA, Westpac, Defence",
+      "Chief Architect for Defence, CBA, Woolworths — trusted across industries",
+      "Created wireless practice generating $3.6M pipeline in first year",
+      "106% billable utilisation, 38 LEAN initiatives, transformed national delivery model",
     ],
     aiContext: {
-      situation: "Telstra Purple needed to evolve its platform capabilities and service delivery models to meet increasing client demands for cloud-native solutions and operational efficiency.",
-      approach: "Focused on developing scalable cloud-native platforms while enhancing service delivery models. Drove automation initiatives to improve performance and reduce operational costs.",
-      results: "Developed scalable cloud-native platforms driving business growth. Enhanced service delivery models improving client satisfaction. Reduced operational costs through automation.",
-      lessonsLearned: "Platform strategy must balance standardisation for efficiency with flexibility for client-specific needs. The key is building configurable platforms rather than custom solutions.",
-    },
-  },
-  {
-    id: "telstra-automation",
-    company: "Telstra",
-    role: "Head of Automation & Robotics",
-    period: "Feb 2018 – Mar 2021",
-    logo: "/logos/telstra.png",
-    bullets: [
-      "Achieved 20% productivity increase ($12M) in first year of automation program",
-      "Product Owner for market-first platform to deliver Automation as a Service",
-      "Delivered automation into CBA, NAB, WBC, ANZ, Qantas, Origin Energy, and more",
-      "Created 6 new services and 50 artefacts across 5 lines of business",
-    ],
-    aiContext: {
-      situation: "Telstra needed to transform its service delivery through automation and robotics. The goal was to reduce manual intervention, improve efficiency, and create new revenue streams through automation services.",
-      approach: "Built the automation capability from scratch—created framework, reference architecture, knowledge management, commercial model, KPIs, and governance. Initiated Centre of Excellence teams to deliver centrally controlled, standardised services aligned with sales teams.",
-      results: "Delivered 20% productivity increase representing $12M in value in the first year. Became Product Owner for market-first Automation as a Service platform. Successfully delivered automation to major enterprise clients including all Big 4 banks, Qantas, Origin Energy, and more.",
-      lessonsLearned: "Automation success requires proving ROI quickly with pilot projects, then building the governance and commercial framework to scale. The hardest part isn't the technology—it's changing how teams think about work.",
-    },
-  },
-  {
-    id: "telstra-psm",
-    company: "Telstra",
-    role: "National Professional Services Manager",
-    period: "Dec 2016 – Sep 2018",
-    logo: "/logos/telstra.png",
-    bullets: [
-      "Led renewal of QANTAS, Jetstar, CBA and Westpac contracts totalling $1B+",
-      "Achieved 106% billable utilisation, overachieved targets by 21% ($494K)",
-      "Created wireless practice delivering $3.6M new pipeline in first year",
-      "Executed 38 LEAN initiatives saving 5% ($300K)",
-    ],
-    aiContext: {
-      situation: "Responsible for delivery of professional services into Telstra's top 50 accounts nationwide. Needed to drive utilisation, expand capabilities, and secure major contract renewals.",
-      approach: "Implemented capability uplift plan including skills matrix, training plan, new KPIs and scheduling systems. Created Centre of Excellence teams for standardised service delivery. Applied LEAN methodology systematically across the business unit.",
-      results: "Achieved 106% billable utilisation and overachieved revenue targets by 21%. Created new wireless practice generating $3.6M pipeline. Executed 38 LEAN initiatives saving $300K. Successfully renewed $1B+ in major contracts.",
-      lessonsLearned: "Professional services excellence comes from systematic capability building, not heroic individual efforts. The discipline of LEAN methodology compounds over time when applied consistently.",
+      situation: "Seven years at Telstra spanning four senior roles: Head of Platforms & Services, Head of Automation & Robotics, National Professional Services Manager, and Business Consulting Manager. Each role built on the last — from client-facing architecture and consulting, to running national delivery, to building the automation practice, to leading platforms.",
+      approach: "The thread across all roles was transformation through execution. Built the automation capability from nothing — framework, platform, commercial model, governance. Took struggling accounts and turned them around. Created new practices where none existed. Applied LEAN methodology systematically. Always focused on measurable outcomes.",
+      results: "Built Rapid platform delivering $12M value in year one. Delivered automation to all Big 4 banks, Qantas, Origin, BP, Australia Post. Won Australia's first Arista SDN ($27M). Renewed $1B+ in contracts that were at risk. Created wireless practice with $3.6M pipeline. Achieved 106% utilisation. Transformed how Telstra delivered services.",
+      lessonsLearned: "The biggest impact comes from staying long enough to see transformation through. Seven years let me build on each role — relationships, credibility, and institutional knowledge compound. The hardest part of automation isn't technology — it's changing how people think about work.",
     },
   },
   {

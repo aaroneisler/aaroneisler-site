@@ -28,7 +28,7 @@ export const profile = {
     },
   ],
 
-  companies: ["Orro Group", "Telstra Purple", "Telstra", "Dimension Data", "Cisco"],
+  companies: ["NTT (DiData)", "Orro", "Telstra", "Optus", "Cisco"],
 };
 
 export const experience = [
@@ -80,7 +80,7 @@ export const experience = [
       "Built 'Rapid' automation platform from scratch — $12M value in year one, delivered into all Big 4 banks",
       "Won and delivered Australia's first Arista SDN ($27M) — full lifecycle from bid to transition",
       "Renewed at-risk contracts: CBA, Westpac, Defence",
-      "Chief Architect for Defence, CBA, Woolworths — trusted across industries",
+      "CTO for Defence and CBA — trusted with the most complex accounts",
       "Created wireless practice generating $3.6M pipeline in first year",
       "106% billable utilisation, 38 LEAN initiatives, transformed national delivery model",
     ],
@@ -92,13 +92,13 @@ export const experience = [
     },
   },
   {
-    id: "dimension-data",
-    company: "Dimension Data",
+    id: "ntt",
+    company: "NTT (Dimension Data)",
     role: "Security Practice Manager & Enterprise Architect",
     period: "Sep 2010 – Jun 2015",
-    logo: "/logos/dimensiondata.png",
+    logo: "/logos/ntt.png",
     bullets: [
-      "Delivered Australia's first Cisco ACI implementation ($1M CAPEX, 25% OPEX reduction)",
+      "CTO for Woolworths — delivered Australia's first Cisco ACI ($1M CAPEX, 25% OPEX reduction)",
       "Achieved PCI DSS compliance generating $700K revenue",
       "Chaired Architecture Review Board implementing TOGAF-based ADM",
       "Increased revenue by 35% while maintaining gross profit",
@@ -108,6 +108,24 @@ export const experience = [
       approach: "Owned PCI compliance process and risk register. Chaired Architecture Review Board implementing TOGAF-based Architecture Development Method. Redesigned sales process for security deals with new qualification model.",
       results: "Delivered Australia's first Cisco Application Centric Infrastructure—$1M CAPEX with modelled 25% OPEX reduction. Achieved PCI DSS compliance generating $700K revenue. Increased revenue by 35% while maintaining gross profit. Sales process redesign increased hit rate by 25%.",
       lessonsLearned: "Being first to market with new technology creates disproportionate credibility. The combination of technical depth and commercial acumen is rare and valuable in enterprise sales.",
+    },
+  },
+  {
+    id: "early-career",
+    company: "Optus & Cisco",
+    role: "Earlier Career",
+    period: "2001 – 2010",
+    logo: "/logos/cisco.png",
+    bullets: [
+      "Systems Engineer at Optus — billable deployment across enterprise clients",
+      "TAC Engineer at Cisco — escalation support, deep technical foundations",
+      "Where I learned the craft before leading teams",
+    ],
+    aiContext: {
+      situation: "Started career in hands-on technical roles, building the engineering foundation that would later inform leadership positions.",
+      approach: "Focused on mastering the technical craft — troubleshooting, deployment, escalation support. Built credibility through deep technical competence.",
+      results: "Developed the technical depth that later enabled me to lead engineering teams and architect enterprise solutions. This foundation is why I can still get into the weeds when needed.",
+      lessonsLearned: "You can't lead technical teams effectively without having done the work yourself. The years on the tools built credibility that no MBA can replace.",
     },
   },
 ];

@@ -40,14 +40,23 @@ export default function ResumePage() {
       <div className="resume-container">
         {/* Header */}
         <header className="resume-header">
-          <h1>{profile.name}</h1>
-          <p className="subtitle">{profile.subtitle}</p>
-          <div className="contact-info">
-            <span>{profile.location}</span>
-            <span className="divider">|</span>
-            <span>{profile.email}</span>
-            <span className="divider">|</span>
-            <span>{profile.phone}</span>
+          <div className="header-content">
+            <img
+              src="/headshot.png"
+              alt="Aaron Eisler"
+              className="resume-photo"
+            />
+            <div className="header-text">
+              <h1>{profile.name}</h1>
+              <p className="subtitle">{profile.subtitle}</p>
+              <div className="contact-info">
+                <span>{profile.location}</span>
+                <span className="divider">|</span>
+                <span>{profile.email}</span>
+                <span className="divider">|</span>
+                <span>{profile.phone}</span>
+              </div>
+            </div>
           </div>
         </header>
 
@@ -156,10 +165,27 @@ export default function ResumePage() {
         }
 
         .resume-header {
-          text-align: center;
           margin-bottom: 24px;
           padding-bottom: 16px;
           border-bottom: 2px solid #1a1a1a;
+        }
+
+        .resume-header .header-content {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+
+        .resume-header .resume-photo {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #e5e5e5;
+        }
+
+        .resume-header .header-text {
+          flex: 1;
         }
 
         .resume-header h1 {

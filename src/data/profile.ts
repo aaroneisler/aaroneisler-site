@@ -19,8 +19,8 @@ export const profile = {
       story: "Woolworths, CBA, Defence. Three very different industries, same level of trust."
     },
     {
-      headline: "Built automation before it was cool",
-      story: "2018: No practice existed. I built the framework, platform, commercial model. $12M value in year one. All Big 4 banks delivered."
+      headline: "AI pioneer since 2016",
+      story: "Machine learning, robotics, workflow automation — I built Telstra's practice from scratch. $12M value in year one. All Big 4 banks delivered. This isn't new to me."
     },
     {
       headline: "Startup to $2M",

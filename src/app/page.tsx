@@ -15,41 +15,51 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Hero content with photo */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 mb-12">
-            {/* Headshot */}
-            <div className="flex-shrink-0">
-              <img
-                src="/headshot.png"
-                alt="Aaron Eisler"
-                className="w-52 h-52 md:w-64 md:h-64 rounded-full object-cover shadow-lg"
-                style={{
-                  border: '3px solid var(--border)',
-                  boxShadow: 'var(--shadow-lg)'
-                }}
-              />
-            </div>
+        {/* Headshot - positioned left on desktop */}
+        <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2">
+          <img
+            src="/headshot.png"
+            alt="Aaron Eisler"
+            className="w-56 h-56 xl:w-64 xl:h-64 rounded-full object-cover"
+            style={{
+              border: '3px solid var(--border)',
+              boxShadow: 'var(--shadow-lg)'
+            }}
+          />
+        </div>
 
-            {/* Name and title */}
-            <div className="text-center md:text-left">
-              <h1
-                className="font-bold mb-3 tracking-tight"
-                style={{ fontSize: 'clamp(2.618rem, 5vw, 4.236rem)' }}
-              >
-                {profile.name}
-              </h1>
-              <p
-                className="font-medium mb-3"
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  color: 'var(--accent)'
-                }}
-              >
-                {profile.subtitle}
-              </p>
-              <p style={{ color: 'var(--secondary)' }}>{profile.location}</p>
-            </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Mobile headshot - centered */}
+          <div className="lg:hidden flex justify-center mb-10">
+            <img
+              src="/headshot.png"
+              alt="Aaron Eisler"
+              className="w-48 h-48 rounded-full object-cover"
+              style={{
+                border: '3px solid var(--border)',
+                boxShadow: 'var(--shadow-lg)'
+              }}
+            />
+          </div>
+
+          {/* Name and title - always centered */}
+          <div className="text-center mb-12">
+            <h1
+              className="font-bold mb-3 tracking-tight"
+              style={{ fontSize: 'clamp(2.618rem, 5vw, 4.236rem)' }}
+            >
+              {profile.name}
+            </h1>
+            <p
+              className="font-medium mb-3"
+              style={{
+                fontSize: 'var(--text-xl)',
+                color: 'var(--accent)'
+              }}
+            >
+              {profile.subtitle}
+            </p>
+            <p style={{ color: 'var(--secondary)' }}>{profile.location}</p>
           </div>
 
           {/* Company links */}

@@ -16,7 +16,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 px-6 lg:px-8">
         {/* Headshot - positioned left on desktop */}
-        <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2">
+        <div className="hidden lg:block absolute left-[12%] xl:left-[15%] top-1/2 -translate-y-1/2">
           <img
             src="/headshot.png"
             alt="Aaron Eisler"

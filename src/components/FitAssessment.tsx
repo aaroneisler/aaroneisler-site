@@ -112,7 +112,7 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
 
   return (
     <div
-      className="transition-all"
+      className="transition-all breathing-glow-strong"
       style={{
         padding: 'var(--space-lg)',
         background: 'var(--card)',
@@ -152,11 +152,11 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
         <button
           onClick={handleAnalyze}
           disabled={isAnalyzing || !jobDescription.trim()}
-          className="w-full font-medium transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          className="w-full font-medium transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 rainbow-border"
           style={{
             padding: '0.786em 1.618em',
-            background: 'var(--primary)',
-            color: 'var(--on-primary)',
+            background: '#1a1a2e',
+            color: '#ffffff',
             borderRadius: 'var(--radius-lg)',
             boxShadow: 'var(--shadow-sm)'
           }}

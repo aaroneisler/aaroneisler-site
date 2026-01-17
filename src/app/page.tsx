@@ -73,7 +73,7 @@ export default function Home() {
                 onClick={() => {
                   document.getElementById(company.experienceId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
-                className="font-medium uppercase transition-all hover:opacity-100 cursor-pointer"
+                className="font-medium uppercase transition-all cursor-pointer breathing-glow hover-accent"
                 style={{
                   fontSize: 'var(--text-sm)',
                   color: 'var(--secondary)',
@@ -81,6 +81,8 @@ export default function Home() {
                   opacity: 0.6,
                   background: 'none',
                   border: 'none',
+                  padding: '0.5em 1em',
+                  borderRadius: 'var(--radius-full)',
                 }}
               >
                 {company.name}
@@ -93,11 +95,11 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button
                 onClick={() => setIsChatOpen(true)}
-                className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] rainbow-border"
                 style={{
                   padding: '0.786em 1.618em',
-                  background: 'var(--primary)',
-                  color: 'var(--on-primary)',
+                  background: '#1a1a2e',
+                  color: '#ffffff',
                   borderRadius: 'var(--radius-lg)',
                   boxShadow: 'var(--shadow-md)'
                 }}
@@ -121,7 +123,7 @@ export default function Home() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] hover-accent"
                 style={{
                   padding: '0.786em 1.618em',
                   border: '1px solid var(--border)',
@@ -136,7 +138,7 @@ export default function Home() {
               </a>
               <a
                 href="/resume"
-                className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] hover-accent"
                 style={{
                   padding: '0.786em 1.618em',
                   border: '1px solid var(--border)',
@@ -181,6 +183,7 @@ export default function Home() {
             {profile.highlights.map((highlight, index) => (
               <HighlightPill
                 key={index}
+                index={index}
                 headline={highlight.headline}
                 story={highlight.story}
               />
@@ -282,7 +285,7 @@ export default function Home() {
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="transition-all hover:scale-[1.01]"
+                className="transition-all hover:scale-[1.01] breathing-glow-strong"
                 style={{
                   padding: 'var(--space-lg)',
                   background: 'var(--card)',
@@ -331,11 +334,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href={`mailto:${profile.email}`}
-              className="font-medium transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="font-medium transition-all hover:scale-[1.02] active:scale-[0.98] hover-invert"
               style={{
                 padding: '0.786em 1.618em',
-                background: 'var(--accent)',
-                color: 'var(--on-accent)',
+                background: '#ffffff',
+                color: '#1a1a2e',
                 borderRadius: 'var(--radius-lg)',
                 boxShadow: 'var(--shadow-md)'
               }}
@@ -346,7 +349,7 @@ export default function Home() {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="font-medium transition-all hover:scale-[1.02] active:scale-[0.98] hover-accent"
               style={{
                 padding: '0.786em 1.618em',
                 border: '1px solid var(--border)',

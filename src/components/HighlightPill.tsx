@@ -5,6 +5,7 @@ import { useState } from "react";
 interface HighlightPillProps {
   headline: string;
   story: string;
+  index?: number;
 }
 
 export default function HighlightPill({ headline, story }: HighlightPillProps) {
@@ -18,7 +19,7 @@ export default function HighlightPill({ headline, story }: HighlightPillProps) {
     >
       {/* The pill */}
       <span
-        className="text-sm font-medium transition-all cursor-pointer inline-block"
+        className="text-sm font-medium transition-all cursor-pointer inline-block breathing-glow"
         style={{
           padding: '0.618em 1.272em',
           background: isHovered ? 'var(--accent)' : 'var(--surface)',

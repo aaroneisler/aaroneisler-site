@@ -69,8 +69,13 @@ export default function ExperienceCard({
         {/* Expand button */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-2 text-sm font-medium transition-all"
-          style={{ color: 'var(--accent)' }}
+          className="flex items-center gap-2 text-sm font-medium transition-all hover-accent"
+          style={{
+            color: 'var(--accent)',
+            padding: '0.5em 1em',
+            borderRadius: 'var(--radius-md)',
+            marginLeft: '-0.5em'
+          }}
         >
           <svg
             className="w-4 h-4 transition-transform"

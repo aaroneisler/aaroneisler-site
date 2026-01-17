@@ -15,12 +15,12 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 px-6 lg:px-8">
-        {/* Headshot - positioned left on desktop */}
-        <div className="hidden lg:block absolute left-[12%] xl:left-[15%] top-1/2 -translate-y-1/2">
+        {/* Headshot - positioned left on desktop, overlapping content */}
+        <div className="hidden lg:block absolute left-[5%] xl:left-[8%] top-1/2 -translate-y-1/2">
           <img
             src="/headshot.png"
             alt="Aaron Eisler"
-            className="w-56 h-56 xl:w-64 xl:h-64 rounded-full object-cover"
+            className="w-72 h-72 xl:w-80 xl:h-80 rounded-full object-cover"
             style={{
               border: '3px solid var(--border)',
               boxShadow: 'var(--shadow-lg)'

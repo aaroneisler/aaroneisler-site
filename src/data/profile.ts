@@ -7,7 +7,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/aaroneisler/",
   phone: "0429 555 885",
 
-  summary: `Most executives are either operations people or technology people. I'm both. And when it's broken — the renewal at risk, the integration that's stuck, the platform that doesn't exist — I'm who they send. CTO for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company.`,
+  summary: `Most executives are either operations people or technology people. I'm both. And when it's broken, I'm who they send. The renewal at risk. The integration that's stuck. The platform that doesn't exist. CTO for Defence, CBA, Woolworths. Built Telstra's automation practice from scratch. Unified 11 acquired companies at Orro. Now building an AI company.`,
 
   highlights: [
     {
@@ -20,15 +20,21 @@ export const profile = {
     },
     {
       headline: "AI pioneer since 2016",
-      story: "Machine learning, robotics, workflow automation — I built Telstra's practice from scratch. $12M value in year one. All Big 4 banks delivered. This isn't new to me."
+      story: "Machine learning, robotics, workflow automation. I built Telstra's practice from scratch. $12M value in year one. All Big 4 banks delivered. This isn't new to me."
     },
     {
       headline: "Startup to $2M",
-      story: "AetherX: blank page to first revenue in 90 days. $2M by month 18. I don't just run things — I build them."
+      story: "AetherX: blank page to first revenue in 90 days. $2M by month 18. I don't just run things. I build them."
     },
   ],
 
-  companies: ["NTT (DiData)", "Orro", "Telstra", "Optus", "Cisco"],
+  companies: [
+    { name: "Orro", experienceId: "orro" },
+    { name: "Telstra", experienceId: "telstra" },
+    { name: "NTT", experienceId: "ntt" },
+    { name: "Optus", experienceId: "early-career" },
+    { name: "Cisco", experienceId: "early-career" },
+  ],
 };
 
 export const experience = [
@@ -39,16 +45,16 @@ export const experience = [
     period: "Oct 2023 – Nov 2025",
     logo: "/logos/orro.png",
     bullets: [
-      "Unified 11 acquired companies into one operating model — 2% EBITDA improvement",
-      "Renewed QANTAS, Jetstar, Flight Centre, Australia Post — relationships I was brought in to save",
-      "Built AI solutions for contract analysis, billing integrity, renewal forecasting — in production, not pilots",
+      "Unified 11 acquired companies into one operating model. 2% EBITDA improvement.",
+      "Renewed QANTAS, Jetstar, Flight Centre, Australia Post. Relationships I was brought in to save.",
+      "Built AI solutions for contract analysis, billing integrity, renewal forecasting. In production, not pilots.",
       "$200M P&L across Network, Cloud, Cyber, and Collaboration services",
     ],
     aiContext: {
       situation: "Orro had acquired 11 separate companies operating as fragmented businesses with different systems, processes, and cultures. The mandate was to unify them into a scalable ICT organisation capable of competing at enterprise scale.",
-      approach: "I led an end-to-end transformation, industrialising core operations by embedding robotics, workflow automation, and AI into every facet of the service lifecycle—from customer onboarding through to billing and support. We deliberately shifted away from legacy tools and decentralised processes, replacing them with platform-based operating frameworks.",
+      approach: "I led an end-to-end transformation, industrialising core operations by embedding robotics, workflow automation, and AI into every facet of the service lifecycle. From customer onboarding through to billing and support. We deliberately shifted away from legacy tools and decentralised processes, replacing them with platform-based operating frameworks.",
       results: "Delivered 2% EBITDA increase through operational efficiency. Built a digitised operating engine that allows Orro to compete at enterprise scale while preserving agility. Deployed AI-led solutions that significantly reduced cycle time, revenue leakage, and manual effort.",
-      lessonsLearned: "M&A integration success depends on moving fast on operational unification while being patient with cultural integration. The technology transformation must happen in parallel with people change management—neither can wait for the other.",
+      lessonsLearned: "M&A integration success depends on moving fast on operational unification while being patient with cultural integration. The technology transformation must happen in parallel with people change management. Neither can wait for the other.",
     },
   },
   {
@@ -58,8 +64,8 @@ export const experience = [
     period: "Jul 2022 – Sep 2023",
     logo: "/logos/aetherx.png",
     bullets: [
-      "Co-founded and built to $2M revenue in 18 months — first revenue in 90 days",
-      "Specialised in OT (Operational Technology) — secure automation for critical infrastructure",
+      "Co-founded and built to $2M revenue in 18 months. First revenue in 90 days.",
+      "Specialised in OT (Operational Technology). Secure automation for critical infrastructure.",
       "Built India operations and established channel partnerships",
       "End-to-end accountability: strategy, sales, delivery, finance",
     ],
@@ -77,18 +83,18 @@ export const experience = [
     period: "Jun 2015 – Jul 2022",
     logo: "/logos/telstra.png",
     bullets: [
-      "Built 'Rapid' automation platform from scratch — $12M value in year one, delivered into all Big 4 banks",
-      "Won and delivered Australia's first Arista SDN ($27M) — full lifecycle from bid to transition",
+      "Built 'Rapid' automation platform from scratch. $12M value in year one. Delivered into all Big 4 banks.",
+      "Won and delivered Australia's first Arista SDN ($27M). Full lifecycle from bid to transition.",
       "Renewed at-risk contracts: CBA, Westpac, Defence",
-      "CTO for Defence and CBA — trusted with the most complex accounts",
+      "CTO for Defence and CBA. Trusted with the most complex accounts.",
       "Created wireless practice generating $3.6M pipeline in first year",
       "106% billable utilisation, 38 LEAN initiatives, transformed national delivery model",
     ],
     aiContext: {
-      situation: "Seven years at Telstra spanning four senior roles: Head of Platforms & Services, Head of Automation & Robotics, National Professional Services Manager, and Business Consulting Manager. Each role built on the last — from client-facing architecture and consulting, to running national delivery, to building the automation practice, to leading platforms.",
-      approach: "The thread across all roles was transformation through execution. Built the automation capability from nothing — framework, platform, commercial model, governance. Took struggling accounts and turned them around. Created new practices where none existed. Applied LEAN methodology systematically. Always focused on measurable outcomes.",
+      situation: "Seven years at Telstra spanning four senior roles: Head of Platforms & Services, Head of Automation & Robotics, National Professional Services Manager, and Business Consulting Manager. Each role built on the last. Started with client-facing architecture and consulting, then ran national delivery, then built the automation practice, then led platforms.",
+      approach: "The thread across all roles was transformation through execution. Built the automation capability from nothing. Framework, platform, commercial model, governance. Took struggling accounts and turned them around. Created new practices where none existed. Applied LEAN methodology systematically. Always focused on measurable outcomes.",
       results: "Built Rapid platform delivering $12M value in year one. Delivered automation to all Big 4 banks, Qantas, Origin, BP, Australia Post. Won Australia's first Arista SDN ($27M). Renewed $1B+ in contracts that were at risk. Created wireless practice with $3.6M pipeline. Achieved 106% utilisation. Transformed how Telstra delivered services.",
-      lessonsLearned: "The biggest impact comes from staying long enough to see transformation through. Seven years let me build on each role — relationships, credibility, and institutional knowledge compound. The hardest part of automation isn't technology — it's changing how people think about work.",
+      lessonsLearned: "The biggest impact comes from staying long enough to see transformation through. Seven years let me build on each role. Relationships, credibility, and institutional knowledge compound. The hardest part of automation isn't technology. It's changing how people think about work.",
     },
   },
   {
@@ -98,7 +104,7 @@ export const experience = [
     period: "Sep 2010 – Jun 2015",
     logo: "/logos/ntt.png",
     bullets: [
-      "CTO for Woolworths — delivered Australia's first Cisco ACI ($1M CAPEX, 25% OPEX reduction)",
+      "CTO for Woolworths. Delivered Australia's first Cisco ACI ($1M CAPEX, 25% OPEX reduction)",
       "Achieved PCI DSS compliance generating $700K revenue",
       "Chaired Architecture Review Board implementing TOGAF-based ADM",
       "Increased revenue by 35% while maintaining gross profit",
@@ -106,7 +112,7 @@ export const experience = [
     aiContext: {
       situation: "Managing security practice and enterprise architecture for major retail client (Woolworths), with responsibility for compliance, risk management, and technology strategy across a complex multi-vendor environment.",
       approach: "Owned PCI compliance process and risk register. Chaired Architecture Review Board implementing TOGAF-based Architecture Development Method. Redesigned sales process for security deals with new qualification model.",
-      results: "Delivered Australia's first Cisco Application Centric Infrastructure—$1M CAPEX with modelled 25% OPEX reduction. Achieved PCI DSS compliance generating $700K revenue. Increased revenue by 35% while maintaining gross profit. Sales process redesign increased hit rate by 25%.",
+      results: "Delivered Australia's first Cisco Application Centric Infrastructure. $1M CAPEX with modelled 25% OPEX reduction. Achieved PCI DSS compliance generating $700K revenue. Increased revenue by 35% while maintaining gross profit. Sales process redesign increased hit rate by 25%.",
       lessonsLearned: "Being first to market with new technology creates disproportionate credibility. The combination of technical depth and commercial acumen is rare and valuable in enterprise sales.",
     },
   },
@@ -117,13 +123,13 @@ export const experience = [
     period: "2001 – 2010",
     logo: "/logos/cisco.png",
     bullets: [
-      "Systems Engineer at Optus — billable deployment across enterprise clients",
-      "TAC Engineer at Cisco — escalation support, deep technical foundations",
+      "Systems Engineer at Optus. Billable deployment across enterprise clients",
+      "TAC Engineer at Cisco. Escalation support, deep technical foundations",
       "Where I learned the craft before leading teams",
     ],
     aiContext: {
       situation: "Started career in hands-on technical roles, building the engineering foundation that would later inform leadership positions.",
-      approach: "Focused on mastering the technical craft — troubleshooting, deployment, escalation support. Built credibility through deep technical competence.",
+      approach: "Focused on mastering the technical craft. Troubleshooting, deployment, escalation support. Built credibility through deep technical competence.",
       results: "Developed the technical depth that later enabled me to lead engineering teams and architect enterprise solutions. This foundation is why I can still get into the weeds when needed.",
       lessonsLearned: "You can't lead technical teams effectively without having done the work yourself. The years on the tools built credibility that no MBA can replace.",
     },

@@ -52,34 +52,23 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Company logos */}
-          <div
-            className="flex justify-center items-center flex-wrap gap-6 mb-10"
-            style={{ opacity: 0.5 }}
-          >
-            {profile.companies.slice(0, 4).map((company, index) => (
-              <span
+          {/* Company links */}
+          <div className="flex justify-center items-center flex-wrap gap-6 mb-10">
+            {profile.companies.map((company, index) => (
+              <button
                 key={index}
-                className="text-xs font-medium uppercase tracking-widest"
-                style={{ color: 'var(--secondary)', letterSpacing: '0.1em' }}
+                onClick={() => {
+                  document.getElementById(company.experienceId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
+                className="text-xs font-medium uppercase tracking-widest transition-all hover:opacity-100 cursor-pointer"
+                style={{ color: 'var(--secondary)', letterSpacing: '0.1em', opacity: 0.7, background: 'none', border: 'none' }}
               >
-                {company}
-              </span>
+                {company.name}
+              </button>
             ))}
           </div>
 
           <div className="text-center">
-            {/* Key highlights */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {profile.highlights.map((highlight, index) => (
-                <HighlightPill
-                  key={index}
-                  headline={highlight.headline}
-                  story={highlight.story}
-                />
-              ))}
-            </div>
-
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button
@@ -166,6 +155,17 @@ export default function Home() {
           >
             {profile.summary}
           </p>
+
+          {/* Key highlights */}
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            {profile.highlights.map((highlight, index) => (
+              <HighlightPill
+                key={index}
+                headline={highlight.headline}
+                story={highlight.story}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -187,14 +187,15 @@ export default function Home() {
 
           <div className="space-y-6">
             {experience.map((exp) => (
-              <ExperienceCard
-                key={exp.id}
-                company={exp.company}
-                role={exp.role}
-                period={exp.period}
-                bullets={exp.bullets}
-                aiContext={exp.aiContext}
-              />
+              <div key={exp.id} id={exp.id}>
+                <ExperienceCard
+                  company={exp.company}
+                  role={exp.role}
+                  period={exp.period}
+                  bullets={exp.bullets}
+                  aiContext={exp.aiContext}
+                />
+              </div>
             ))}
           </div>
         </div>

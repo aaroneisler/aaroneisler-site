@@ -53,15 +53,25 @@ export default function Home() {
           </div>
 
           {/* Company links */}
-          <div className="flex justify-center items-center flex-wrap gap-6 mb-10">
+          <div
+            className="flex justify-center items-center flex-wrap"
+            style={{ gap: 'var(--space-xl)', marginBottom: 'var(--space-xl)' }}
+          >
             {profile.companies.map((company, index) => (
               <button
                 key={index}
                 onClick={() => {
                   document.getElementById(company.experienceId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
-                className="text-xs font-medium uppercase tracking-widest transition-all hover:opacity-100 cursor-pointer"
-                style={{ color: 'var(--secondary)', letterSpacing: '0.1em', opacity: 0.7, background: 'none', border: 'none' }}
+                className="font-medium uppercase transition-all hover:opacity-100 cursor-pointer"
+                style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--secondary)',
+                  letterSpacing: '0.15em',
+                  opacity: 0.6,
+                  background: 'none',
+                  border: 'none',
+                }}
               >
                 {company.name}
               </button>

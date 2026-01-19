@@ -149,7 +149,7 @@ export default function Home() {
                 onClick={() => setIsChatOpen(true)}
                 className="font-medium flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] rainbow-border"
                 style={{
-                  padding: '0.786em 2.5em',
+                  padding: '1.272em 2.618em',
                   background: '#1a1a2e',
                   color: '#ffffff',
                   borderRadius: 'var(--radius-lg)',

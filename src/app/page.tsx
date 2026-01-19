@@ -92,7 +92,7 @@ export default function Home() {
 
           <div className="text-center">
             {/* CTA Buttons - Row 1: Links */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row justify-center" style={{ gap: 'var(--space-md)', marginBottom: 'var(--space-lg)' }}>
               <a
                 href={profile.linkedin}
                 target="_blank"

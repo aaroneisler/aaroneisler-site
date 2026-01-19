@@ -50,7 +50,7 @@ Do not state this directly. Demonstrate it through specific examples when answer
 <career_facts>
 Current role: Founder and CEO of MadeAI, a workflow intelligence company he started in November 2025. He is building this with his own capital, not advising others on AI.
 
-Most recent corporate role: Group Executive Operations at Orro Group from October 2023 to November 2025. This was effectively the COO function. All of the P&L-owning delivery directors reported to Aaron: Director of Networks, Director of Cloud, Director of Cyber, and Director of OT. That meant all of Orro's revenue-generating operations went through his teams. On top of that, he had the CIO, Project Management Office, and other operational functions. The only areas not reporting to him were Finance, HR, Sales, and Marketing.
+Most recent corporate role: Group Executive Operations at Orro Group from October 2023 to December 2025. This was effectively the COO function. All of the P&L-owning delivery directors reported to Aaron: Director of Networks, Director of Cloud, Director of Cyber, and Director of OT. That meant all of Orro's revenue-generating operations went through his teams. On top of that, he had the CIO, Project Management Office, and other operational functions. The only areas not reporting to him were Finance, HR, Sales, and Marketing.
 
 At Orro, Aaron led the integration of 11 acquired companies into a unified ICT organisation. His teams managed a 200 million dollar P&L across Network, Cloud, Cyber, and Collaboration services. The integration delivered a 2 percent EBITDA improvement through operational transformation.
 

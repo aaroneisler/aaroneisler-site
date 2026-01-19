@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 px-6 lg:px-8">
+      <section className="relative px-6 lg:px-8" style={{ paddingTop: '2.618rem', paddingBottom: '2.618rem' }}>
         {/* Headshot - positioned left on desktop, overlapping content */}
         <div className="hidden lg:block absolute left-[5%] xl:left-[8%] top-1/2 -translate-y-1/2">
           <img
@@ -30,7 +30,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto">
           {/* Mobile headshot - centered */}
-          <div className="lg:hidden flex justify-center mb-10">
+          <div className="lg:hidden flex justify-center" style={{ marginBottom: 'var(--space-xl)' }}>
             <img
               src="/headshot.png"
               alt="Aaron Eisler"
@@ -43,18 +43,19 @@ export default function Home() {
           </div>
 
           {/* Name and title - always centered */}
-          <div className="text-center mb-12">
+          <div className="text-center" style={{ marginBottom: 'var(--space-xl)' }}>
             <h1
-              className="font-bold mb-3 tracking-tight"
-              style={{ fontSize: 'clamp(2.618rem, 5vw, 4.236rem)' }}
+              className="font-bold tracking-tight"
+              style={{ fontSize: 'clamp(2.618rem, 5vw, 4.236rem)', marginBottom: 'var(--space-sm)' }}
             >
               {profile.name}
             </h1>
             <p
-              className="font-medium mb-3"
+              className="font-medium"
               style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--accent)'
+                color: 'var(--accent)',
+                marginBottom: 'var(--space-sm)'
               }}
             >
               {profile.subtitle}
@@ -81,7 +82,7 @@ export default function Home() {
                   opacity: 0.6,
                   background: 'none',
                   border: 'none',
-                  padding: '0.5em 1em',
+                  padding: '0.618em 1em',
                   borderRadius: 'var(--radius-full)',
                 }}
               >
@@ -178,13 +179,13 @@ export default function Home() {
 
       {/* Summary Section */}
       <section
-        className="py-16 px-6 lg:px-8"
-        style={{ background: 'var(--surface)' }}
+        className="px-6 lg:px-8"
+        style={{ background: 'var(--surface)', paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}
       >
         <div className="max-w-3xl mx-auto">
           <h2
-            className="font-bold mb-8 text-center"
-            style={{ fontSize: 'var(--text-2xl)' }}
+            className="font-bold text-center"
+            style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-lg)' }}
           >
             Professional Summary
           </h2>
@@ -199,7 +200,7 @@ export default function Home() {
           </p>
 
           {/* Key highlights */}
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <div className="flex flex-wrap justify-center" style={{ gap: 'var(--space-sm)', marginTop: 'var(--space-lg)' }}>
             {profile.highlights.map((highlight, index) => (
               <HighlightPill
                 key={index}
@@ -213,12 +214,12 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-16 px-6 lg:px-8" id="experience">
+      <section className="px-6 lg:px-8" id="experience" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center" style={{ marginBottom: 'var(--space-xl)' }}>
             <h2
-              className="font-bold mb-3"
-              style={{ fontSize: 'var(--text-2xl)' }}
+              className="font-bold"
+              style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-sm)' }}
             >
               Experience
             </h2>
@@ -228,7 +229,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-lg)' }}>
             {experience.map((exp) => (
               <div key={exp.id} id={exp.id}>
                 <ExperienceCard
@@ -246,15 +247,15 @@ export default function Home() {
 
       {/* Skills Section */}
       <section
-        className="py-16 px-6 lg:px-8"
+        className="px-6 lg:px-8"
         id="skills"
-        style={{ background: 'var(--surface)' }}
+        style={{ background: 'var(--surface)', paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}
       >
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center" style={{ marginBottom: 'var(--space-xl)' }}>
             <h2
-              className="font-bold mb-3"
-              style={{ fontSize: 'var(--text-2xl)' }}
+              className="font-bold"
+              style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-sm)' }}
             >
               Skills & Capabilities
             </h2>
@@ -268,12 +269,12 @@ export default function Home() {
       </section>
 
       {/* Fit Assessment Section */}
-      <section className="py-16 px-6 lg:px-8" id="fit">
+      <section className="px-6 lg:px-8" id="fit" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center" style={{ marginBottom: 'var(--space-xl)' }}>
             <h2
-              className="font-bold mb-3"
-              style={{ fontSize: 'var(--text-2xl)' }}
+              className="font-bold"
+              style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-sm)' }}
             >
               Am I Right for Your Role?
             </h2>
@@ -289,19 +290,19 @@ export default function Home() {
 
       {/* Education Section */}
       <section
-        className="py-16 px-6 lg:px-8"
+        className="px-6 lg:px-8"
         id="education"
-        style={{ background: 'var(--surface)' }}
+        style={{ background: 'var(--surface)', paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}
       >
         <div className="max-w-4xl mx-auto">
           <h2
-            className="font-bold mb-10 text-center"
-            style={{ fontSize: 'var(--text-2xl)' }}
+            className="font-bold text-center"
+            style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-xl)' }}
           >
             Education & Certifications
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 'var(--space-md)' }}>
             {education.map((edu, index) => (
               <div
                 key={index}
@@ -336,22 +337,21 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-6 lg:px-8" id="contact">
+      <section className="px-6 lg:px-8" id="contact" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
         <div className="max-w-2xl mx-auto text-center">
           <h2
-            className="font-bold mb-4"
-            style={{ fontSize: 'var(--text-2xl)' }}
+            className="font-bold"
+            style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-md)' }}
           >
             Let's Connect
           </h2>
           <p
-            className="mb-10"
-            style={{ color: 'var(--secondary)' }}
+            style={{ color: 'var(--secondary)', marginBottom: 'var(--space-xl)' }}
           >
             Interested in discussing how I can contribute to your organisation?
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center" style={{ gap: 'var(--space-md)' }}>
             <a
               href={`mailto:${profile.email}`}
               className="font-medium transition-all hover:scale-[1.02] active:scale-[0.98] hover-invert"
@@ -385,8 +385,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="py-10 px-6"
-        style={{ borderTop: '1px solid var(--border)' }}
+        className="px-6"
+        style={{ borderTop: '1px solid var(--border)', paddingTop: 'var(--space-xl)', paddingBottom: 'var(--space-xl)' }}
       >
         <div
           className="max-w-4xl mx-auto text-center text-sm"

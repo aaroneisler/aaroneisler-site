@@ -392,7 +392,7 @@ export default function Home() {
           className="max-w-4xl mx-auto text-center text-sm"
           style={{ color: 'var(--secondary)' }}
         >
-          <p>© {new Date().getFullYear()} Aaron Eisler. Built with AI-assisted development.</p>
+          <p>© {new Date().getFullYear()} Aaron Eisler</p>
         </div>
       </footer>
 

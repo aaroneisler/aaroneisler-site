@@ -93,14 +93,14 @@ export default function Home() {
 
           {/* CTA Buttons - Circular layout on desktop, stacked on mobile */}
           <div className="hidden md:block" style={{ position: 'relative', height: '280px' }}>
-            {/* Connecting circle behind pills */}
+            {/* Connecting ellipse through all pills */}
             <div style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: '320px',
-              height: '260px',
+              width: '700px',
+              height: '300px',
               border: '3px solid var(--border)',
               borderRadius: '50%',
               pointerEvents: 'none',

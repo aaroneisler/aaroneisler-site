@@ -337,32 +337,57 @@ export default function Home() {
       </section>
 
       {/* LinkedIn Articles Section */}
-      <section className="px-6 lg:px-8" id="articles" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
-        <div className="max-w-2xl mx-auto">
+      <section className="px-6 lg:px-8" id="articles" style={{ background: 'var(--surface)', paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
+        <div className="max-w-3xl mx-auto">
           <h2
             className="font-bold text-center"
             style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-lg)' }}
           >
             Latest Articles
           </h2>
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7410151030702829568"
-              height="400"
-              width="100%"
-              frameBorder="0"
-              allowFullScreen
-              title="Embedded LinkedIn post"
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
+            <a
+              href="https://www.linkedin.com/pulse/from-digital-exhaust-decisions-how-ai-agents-redefine-aaron-eisler-ox5oc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all hover:scale-[1.01]"
               style={{
+                display: 'block',
+                padding: 'var(--space-lg)',
+                background: 'var(--card)',
                 border: '1px solid var(--border)',
                 borderRadius: 'var(--radius-lg)',
-                background: 'var(--surface)'
+                textDecoration: 'none'
               }}
-            />
+            >
+              <h3 className="font-semibold" style={{ marginBottom: 'var(--space-sm)' }}>
+                From Digital Exhaust to Decisions: How AI Agents Redefine What It Means to "Know Your Customer"
+              </h3>
+              <p style={{ color: 'var(--secondary)', fontSize: 'var(--text-sm)', lineHeight: 'var(--phi)' }}>
+                Exploring how AI agents transform passive data into proactive customer insights and decision-making.
+              </p>
+              <span style={{ color: 'var(--accent)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-sm)', display: 'inline-block' }}>
+                Read on LinkedIn →
+              </span>
+            </a>
           </div>
-          <p className="text-center" style={{ marginTop: 'var(--space-md)', color: 'var(--secondary)', fontSize: 'var(--text-sm)' }}>
-            If the article doesn't load, <a href="https://www.linkedin.com/in/aaroneisler/recent-activity/articles/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>view on LinkedIn</a>
-          </p>
+          <div className="text-center" style={{ marginTop: 'var(--space-lg)' }}>
+            <a
+              href="https://www.linkedin.com/in/aaroneisler/recent-activity/articles/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium transition-all hover:scale-[1.02] hover-accent"
+              style={{
+                padding: '0.786em 1.618em',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-lg)',
+                background: 'var(--card)',
+                display: 'inline-block'
+              }}
+            >
+              View all articles
+            </a>
+          </div>
         </div>
       </section>
 

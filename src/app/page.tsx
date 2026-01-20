@@ -338,41 +338,31 @@ export default function Home() {
 
       {/* LinkedIn Articles Section */}
       <section className="px-6 lg:px-8" id="articles" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <h2
             className="font-bold text-center"
-            style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-xl)' }}
+            style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-lg)' }}
           >
             Latest Articles
           </h2>
-          <div className="flex flex-wrap justify-center" style={{ gap: 'var(--space-lg)' }}>
+          <div className="flex justify-center">
             <iframe
               src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7410151030702829568"
-              height="674"
-              width="504"
+              height="400"
+              width="100%"
               frameBorder="0"
               allowFullScreen
               title="Embedded LinkedIn post"
-              style={{ maxWidth: '100%', borderRadius: 'var(--radius-lg)' }}
-            />
-          </div>
-          <div className="text-center" style={{ marginTop: 'var(--space-lg)' }}>
-            <a
-              href="https://www.linkedin.com/in/aaroneisler/recent-activity/articles/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium transition-all hover:scale-[1.02] hover-accent"
               style={{
-                padding: '0.786em 1.618em',
                 border: '1px solid var(--border)',
                 borderRadius: 'var(--radius-lg)',
-                background: 'var(--surface)',
-                display: 'inline-block'
+                background: 'var(--surface)'
               }}
-            >
-              View all articles on LinkedIn
-            </a>
+            />
           </div>
+          <p className="text-center" style={{ marginTop: 'var(--space-md)', color: 'var(--secondary)', fontSize: 'var(--text-sm)' }}>
+            If the article doesn't load, <a href="https://www.linkedin.com/in/aaroneisler/recent-activity/articles/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>view on LinkedIn</a>
+          </p>
         </div>
       </section>
 

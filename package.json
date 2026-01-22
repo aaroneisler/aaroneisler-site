@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate": "echo 'Run from AI repo: python scripts/generators/career_data_generator.py'"
   },
   "dependencies": {
     "@vercel/kv": "^3.0.0",

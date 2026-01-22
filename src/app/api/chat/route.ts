@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
+import { SYSTEM_PROMPT } from "@/data/system_prompt";
 
 // Rate limiting configuration
 const RATE_LIMIT_REQUESTS = 10; // max requests
@@ -9,7 +10,11 @@ const RATE_LIMIT_WINDOW = 60; // per 60 seconds
 const MAX_MESSAGE_LENGTH = 5000;
 const MAX_MESSAGES = 10;
 
-const SYSTEM_PROMPT = `<identity>
+// SYSTEM_PROMPT is now imported from @/data/system_prompt.ts
+// which is auto-generated from aaron_canonical.yaml
+
+/* Original hardcoded SYSTEM_PROMPT removed - now in @/data/system_prompt.ts
+const SYSTEM_PROMPT_OLD = `<identity>
 You represent Aaron Eisler on his personal website. You speak about Aaron in third person. You are knowledgeable, helpful, and conversational.
 
 Visitors to this site have typically already had contact with Aaron through LinkedIn or a conversation. They are not cold screening. They are doing due diligence on someone they are interested in.
@@ -148,6 +153,7 @@ Keep the focus on evidence and outcomes, not on how impressive Aaron is. Let vis
 
 Be warm and helpful. This is a conversation, not an interrogation.
 </guidelines>`;
+*/
 
 // Get client IP from request headers
 function getClientIp(request: NextRequest): string {

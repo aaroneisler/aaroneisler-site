@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 interface AIContext {
-  situation: string;
-  approach: string;
-  results: string;
-  lessonsLearned: string;
+  situation?: string;
+  approach?: string;
+  results?: string;
+  lessonsLearned?: string;
 }
 
 interface ExperienceCardProps {
@@ -14,7 +14,7 @@ interface ExperienceCardProps {
   role: string;
   period: string;
   bullets: string[];
-  aiContext: AIContext;
+  aiContext?: AIContext;
 }
 
 export default function ExperienceCard({
@@ -66,37 +66,39 @@ export default function ExperienceCard({
           ))}
         </ul>
 
-        {/* Expand button */}
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-2 text-sm font-medium transition-all hover-accent"
-          style={{
-            color: 'var(--accent)',
-            padding: '0.5em 1em',
-            borderRadius: 'var(--radius-md)',
-            marginLeft: '-0.5em'
-          }}
-        >
-          <svg
-            className="w-4 h-4 transition-transform"
-            style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {/* Expand button - only show if aiContext has content */}
+        {aiContext && (aiContext.situation || aiContext.approach || aiContext.results || aiContext.lessonsLearned) && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center gap-2 text-sm font-medium transition-all hover-accent"
+            style={{
+              color: 'var(--accent)',
+              padding: '0.5em 1em',
+              borderRadius: 'var(--radius-md)',
+              marginLeft: '-0.5em'
+            }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-          {isExpanded ? "Hide AI Context" : "View AI Context"}
-        </button>
+            <svg
+              className="w-4 h-4 transition-transform"
+              style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            {isExpanded ? "Hide AI Context" : "View AI Context"}
+          </button>
+        )}
       </div>
 
       {/* Expanded AI Context */}
-      {isExpanded && (
+      {isExpanded && aiContext && (
         <div
           className="animate-fade-in"
           style={{

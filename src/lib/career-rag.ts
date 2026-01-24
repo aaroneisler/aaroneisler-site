@@ -1,69 +1,98 @@
-import OpenAI from 'openai';
+/**
+ * Career RAG Client
+ * Interfaces with career-api for context retrieval and fit assessment.
+ */
 
-const QDRANT_URL = process.env.QDRANT_URL || 'http://192.168.4.248:6333';
+const CAREER_API_URL = process.env.CAREER_API_URL;
+const CAREER_API_KEY = process.env.CAREER_API_KEY;
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Timeout for RAG requests (fail gracefully)
+const RAG_TIMEOUT_MS = 2000;
 
 export async function getRelevantContext(query: string): Promise<string> {
+  if (!CAREER_API_URL || !CAREER_API_KEY) {
+    console.warn('Career API not configured, using fallback');
+    return '';
+  }
+
   try {
-    // 1. Get Embedding
-    const embeddingResponse = await openai.embeddings.create({
-      model: 'text-embedding-3-small',
-      input: query,
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), RAG_TIMEOUT_MS);
+
+    const response = await fetch(`${CAREER_API_URL}/context`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': CAREER_API_KEY,
+      },
+      body: JSON.stringify({ query, limit: 5 }),
+      signal: controller.signal,
     });
-    const vector = embeddingResponse.data[0].embedding;
 
-    // 2. Search Qdrant
-    const collections = ['career_chunks', 'interview_qa', 'stories'];
-    let allHits: any[] = [];
+    clearTimeout(timeoutId);
 
-    for (const collection of collections) {
-      try {
-        const res = await fetch(`${QDRANT_URL}/collections/${collection}/points/search`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            vector: vector,
-            limit: 3,
-            with_payload: true,
-          }),
-        });
-        
-        if (res.ok) {
-          const data = await res.json();
-          allHits = [...allHits, ...data.result];
-        }
-      } catch (e) {
-        console.warn(`Failed to search collection ${collection}`, e);
-      }
+    if (!response.ok) {
+      console.error('Career API error:', response.status);
+      return '';
     }
 
-    // Sort by score and take top 5
-    allHits.sort((a, b) => b.score - a.score);
-    const topHits = allHits.slice(0, 5);
-
-    // Format context
-    return topHits.map(hit => {
-      const p = hit.payload;
-      if (p.type === 'role') return `[CAREER HISTORY] ${p.text}`;
-      if (p.type === 'interview_qa') return `[INTERVIEW Q&A] ${p.text}`;
-      if (p.type === 'story') return `[STORY] ${p.text}`;
-      return p.text;
-    }).join('\n\n');
-
+    const data = await response.json();
+    return data.context || '';
   } catch (error) {
-    console.error("RAG Error:", error);
-    return ""; // Fail gracefully
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.error('Career API timeout after', RAG_TIMEOUT_MS, 'ms');
+    } else {
+      console.error('Career API fetch failed:', error);
+    }
+    return '';
   }
 }
 
+export interface AssessmentResult {
+  fit_score: number;
+  summary: string;
+  strengths: string[];
+  gaps: string[];
+  recommendation: string;
+}
+
+export async function assessFit(
+  jobDescription: string,
+  jobTitle?: string,
+  company?: string
+): Promise<AssessmentResult> {
+  if (!CAREER_API_URL || !CAREER_API_KEY) {
+    throw new Error('Career API not configured');
+  }
+
+  const response = await fetch(`${CAREER_API_URL}/assess`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-Key': CAREER_API_KEY,
+    },
+    body: JSON.stringify({
+      job_description: jobDescription,
+      job_title: jobTitle,
+      company: company,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Assessment failed: ${response.status}`);
+  }
+
+  return response.json();
+}
+
+/**
+ * Build enhanced system prompt with RAG context.
+ */
 export function getSystemPrompt(basePrompt: string, context: string): string {
   if (!context) return basePrompt;
-  
-  return `${basePrompt}` +
-`
+
+  return `${basePrompt}
+
 <relevant_context>
 The following is retrieved context relevant to the user's query from Aaron's career database:
 

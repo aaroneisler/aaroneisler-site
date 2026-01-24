@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 interface FitResult {
-  fitLevel: "strong" | "moderate" | "weak";
+  fit_score: number;
   summary: string;
   strengths: string[];
   gaps: string[];
@@ -14,74 +14,41 @@ export default function FitAssessment() {
   const [jobDescription, setJobDescription] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [result, setResult] = useState<FitResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleAnalyze = async () => {
     if (!jobDescription.trim() || isAnalyzing) return;
 
     setIsAnalyzing(true);
     setResult(null);
+    setError(null);
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch("/api/assess", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: [
-            {
-              role: "user",
-              content: `Analyze this job description and assess Aaron Eisler's fit. Return a JSON response with this exact structure:
-{
-  "fitLevel": "strong" | "moderate" | "weak",
-  "summary": "2-3 sentence overall assessment",
-  "strengths": ["list of 3-5 relevant strengths/experiences that match"],
-  "gaps": ["list of any gaps or areas where fit is weaker"],
-  "recommendation": "1-2 sentence honest recommendation about whether to pursue"
-}
-
-Job Description:
-${jobDescription}
-
-Be honest. If the fit is weak, say so. Aaron values transparency over false positives.`,
-            },
-          ],
-          mode: "fit-assessment",
-        }),
+        body: JSON.stringify({ jobDescription }),
       });
 
-      if (!response.ok) throw new Error("Failed to analyze");
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to analyze");
+      }
 
       const data = await response.json();
-
-      // Try to parse JSON from the response
-      try {
-        const jsonMatch = data.message.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          const parsed = JSON.parse(jsonMatch[0]);
-          setResult(parsed);
-        } else {
-          throw new Error("No JSON found");
-        }
-      } catch {
-        // If JSON parsing fails, create a basic result
-        setResult({
-          fitLevel: "moderate",
-          summary: data.message,
-          strengths: [],
-          gaps: [],
-          recommendation: "Please try again with a more detailed job description.",
-        });
-      }
-    } catch (error) {
-      setResult({
-        fitLevel: "moderate",
-        summary: "Unable to analyze at this time. Please try again.",
-        strengths: [],
-        gaps: [],
-        recommendation: "",
-      });
+      setResult(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unable to analyze at this time. Please try again.");
     } finally {
       setIsAnalyzing(false);
     }
+  };
+
+  // Convert numeric score to fit level for display
+  const getFitLevel = (score: number): "strong" | "moderate" | "weak" => {
+    if (score >= 70) return "strong";
+    if (score >= 50) return "moderate";
+    return "weak";
   };
 
   const getFitColor = (level: string) => {
@@ -97,14 +64,15 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
     }
   };
 
-  const getFitLabel = (level: string) => {
+  const getFitLabel = (score: number) => {
+    const level = getFitLevel(score);
     switch (level) {
       case "strong":
-        return "Strong Fit — Let's Talk";
+        return `Strong Fit (${score}%) — Let's Talk`;
       case "moderate":
-        return "Moderate Fit — Worth Exploring";
+        return `Moderate Fit (${score}%) — Worth Exploring`;
       case "weak":
-        return "Weak Fit — Probably Not Right";
+        return `Weak Fit (${score}%) — Probably Not Right`;
       default:
         return "";
     }
@@ -189,6 +157,20 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
           )}
         </button>
 
+        {error && (
+          <div
+            className="text-sm"
+            style={{
+              padding: 'var(--space-md)',
+              background: 'rgba(239, 68, 68, 0.1)',
+              borderRadius: 'var(--radius-md)',
+              color: '#ef4444'
+            }}
+          >
+            {error}
+          </div>
+        )}
+
         {result && (
           <div
             className="animate-fade-in space-y-4"
@@ -196,14 +178,14 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
           >
             {/* Fit Level Badge */}
             <div
-              className={`inline-block font-medium ${getFitColor(result.fitLevel)}`}
+              className={`inline-block font-medium ${getFitColor(getFitLevel(result.fit_score))}`}
               style={{
                 padding: '0.618em 1.272em',
                 borderRadius: 'var(--radius-full)',
                 border: '1px solid currentColor'
               }}
             >
-              {getFitLabel(result.fitLevel)}
+              {getFitLabel(result.fit_score)}
             </div>
 
             {/* Summary */}
@@ -224,7 +206,7 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
                       key={index}
                       className="text-sm flex items-start gap-2"
                     >
-                      <span style={{ color: '#22c55e' }}>✓</span>
+                      <span style={{ color: '#22c55e' }}>+</span>
                       <span>{strength}</span>
                     </li>
                   ))}
@@ -247,7 +229,7 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
                       key={index}
                       className="text-sm flex items-start gap-2"
                     >
-                      <span style={{ color: '#ef4444' }}>•</span>
+                      <span style={{ color: '#ef4444' }}>-</span>
                       <span>{gap}</span>
                     </li>
                   ))}
@@ -274,6 +256,30 @@ Be honest. If the fit is weak, say so. Aaron values transparency over false posi
                   {result.recommendation}
                 </p>
               </div>
+            )}
+
+            {/* Download Resume Button - only show if fit_score >= 60 */}
+            {result.fit_score >= 60 && (
+              <a
+                href="/Aaron_Eisler_Resume.pdf"
+                download
+                className="w-full font-medium transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
+                style={{
+                  padding: '0.786em 1.618em',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-lg)',
+                  background: 'var(--surface)',
+                  marginTop: 'var(--space-md)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  display: 'flex'
+                }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download Resume
+              </a>
             )}
           </div>
         )}

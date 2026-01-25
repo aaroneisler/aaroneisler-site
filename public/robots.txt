@@ -1,0 +1,7 @@
+# Block crawlers from private tools
+User-agent: *
+Disallow: /jobhunter
+Disallow: /api/
+
+# Allow everything else
+Allow: /

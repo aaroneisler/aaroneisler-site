@@ -1,5 +1,6 @@
 import React from 'react';
-import data from '../../data/cover_letter.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 // Define the data interface
 interface CoverLetterData {
@@ -8,9 +9,16 @@ interface CoverLetterData {
   paragraphs: string[];
 }
 
+// Read JSON at runtime, not build time
 function getCoverLetterData(): CoverLetterData {
-  return data as CoverLetterData;
+  const filePath = join(process.cwd(), 'src', 'data', 'cover_letter.json');
+  const fileContent = readFileSync(filePath, 'utf-8');
+  return JSON.parse(fileContent) as CoverLetterData;
 }
+
+// Force dynamic rendering - never cache
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default function CoverLetterPage() {
   const data = getCoverLetterData();

@@ -27,6 +27,10 @@ export const profile = {
   ],
   "companies": [
     {
+      "name": "MadeAI",
+      "experienceId": "madeai"
+    },
+    {
       "name": "Orro",
       "experienceId": "orro"
     },
@@ -50,6 +54,30 @@ export const profile = {
 };
 
 export const experience = [
+  {
+    "id": "madeai",
+    "company": "MadeAI",
+    "role": "Principal Consultant / Founder",
+    "period": "Nov 2025 – Present",
+    "logo": "/logos/madeai.png",
+    "bullets": [
+      "Lead Consultant for Visy's $1B Yatala Recycling project, developing an AI-powered Contract Variation Tool processing $70M in variations annually.",
+      "Engaged by Blueseas Wholesalers to architect a voice-driven AI bot for ERP integration, enabling 24/7 ordering and reducing order latency by 15 minutes per transaction.",
+      "Providing interim executive leadership and high-impact AI consultancy to operationalise AI safely, ensuring systems are governed by design and aligned with measurable business outcomes.",
+      "Founded to support organisations in adopting responsible, secure, and simple AI workflows, bridging the gap between cutting-edge technology and practical operational reality."
+    ],
+    "aiContext": {
+      "situation": "After 25 years in enterprise technology leadership, I saw the same pattern everywhere: organisations wanted AI but didn't know how to operationalise it safely. The big consultancies were selling strategy decks. The startups were selling hype. Nobody was doing the hard work of making AI actually work in production.",
+      "approach": "I founded MadeAI to be the firm that bridges the gap. We don't just advise - we build. Every engagement starts with a business problem, not a technology solution. We focus on workflow intelligence: AI that works embedded in processes, not generic chatbots that sit unused.",
+      "results": "Within months, we landed enterprise clients including Visy and Blueseas. Real production systems, not pilots. The Contract Variation Tool at Visy processes $70M annually. The voice bot at Blueseas handles orders 24/7. This is what operational AI looks like.",
+      "lessonsLearned": "The market doesn't need more AI strategy. It needs people who can make AI work safely and deliver measurable outcomes. That's the gap MadeAI fills."
+    },
+    "includeInPages": [
+      1,
+      2,
+      3
+    ]
+  },
   {
     "id": "orro",
     "company": "Orro Group",

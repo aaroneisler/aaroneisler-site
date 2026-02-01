@@ -3,7 +3,7 @@
  * Interfaces with career-api for context retrieval and fit assessment.
  */
 
-// Timeout for RAG requests (fail gracefully) - increased for edge network latency
+// Timeout for RAG requests (fail gracefully)
 const RAG_TIMEOUT_MS = 5000;
 
 export async function getRelevantContext(query: string): Promise<string> {
@@ -11,14 +11,8 @@ export async function getRelevantContext(query: string): Promise<string> {
   const CAREER_API_URL = process.env.CAREER_API_URL;
   const CAREER_API_KEY = process.env.CAREER_API_KEY;
 
-  console.log('[RAG] Config check:', {
-    hasUrl: !!CAREER_API_URL,
-    hasKey: !!CAREER_API_KEY,
-    url: CAREER_API_URL?.substring(0, 30)
-  });
-
   if (!CAREER_API_URL || !CAREER_API_KEY) {
-    console.warn('[RAG] Career API not configured, using fallback');
+    console.warn('Career API not configured, using fallback');
     return '';
   }
 
@@ -26,7 +20,6 @@ export async function getRelevantContext(query: string): Promise<string> {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), RAG_TIMEOUT_MS);
 
-    console.log('[RAG] Fetching context for query:', query.substring(0, 50));
     const response = await fetch(`${CAREER_API_URL}/context`, {
       method: 'POST',
       headers: {
@@ -38,21 +31,19 @@ export async function getRelevantContext(query: string): Promise<string> {
     });
 
     clearTimeout(timeoutId);
-    console.log('[RAG] Response status:', response.status);
 
     if (!response.ok) {
-      console.error('[RAG] Career API error:', response.status);
+      console.error('Career API error:', response.status);
       return '';
     }
 
     const data = await response.json();
-    console.log('[RAG] Got context, length:', data.context?.length || 0);
     return data.context || '';
   } catch (error) {
     if (error instanceof Error && error.name === 'AbortError') {
-      console.error('[RAG] Career API timeout after', RAG_TIMEOUT_MS, 'ms');
+      console.error('Career API timeout after', RAG_TIMEOUT_MS, 'ms');
     } else {
-      console.error('[RAG] Career API fetch failed:', error);
+      console.error('Career API fetch failed:', error);
     }
     return '';
   }

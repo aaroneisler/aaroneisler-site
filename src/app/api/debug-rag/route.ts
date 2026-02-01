@@ -1,10 +1,21 @@
 import { NextResponse } from "next/server";
 
+interface DebugInfo {
+  hasUrl: boolean;
+  hasKey: boolean;
+  urlPrefix?: string;
+  keyPrefix?: string;
+  timestamp: string;
+  healthStatus?: number;
+  healthOk?: boolean;
+  healthError?: string;
+}
+
 export async function GET() {
   const CAREER_API_URL = process.env.CAREER_API_URL;
   const CAREER_API_KEY = process.env.CAREER_API_KEY;
 
-  const debug = {
+  const debug: DebugInfo = {
     hasUrl: !!CAREER_API_URL,
     hasKey: !!CAREER_API_KEY,
     urlPrefix: CAREER_API_URL?.substring(0, 30),

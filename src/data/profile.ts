@@ -159,31 +159,28 @@ export const experience = [
 
 export const skills = {
   "strong": [
-    "Operational Leadership",
     "P&L Management",
-    "Digital Transformation",
-    "AI Strategy",
+    "Crisis & Turnaround Leadership",
+    "AI Strategy & Execution",
     "M&A Integration",
-    "Enterprise Architecture (TOGAF)",
-    "Automation & Robotics",
-    "Cross-functional Team Leadership",
-    "Stakeholder Management",
-    "Process Optimisation (LEAN)"
+    "Digital Transformation",
+    "Enterprise Stakeholder Management"
   ],
   "moderate": [
-    "Cloud Architecture (AWS, Azure)",
-    "Cybersecurity Strategy",
+    "Enterprise Architecture",
+    "Cloud Platforms (AWS, Azure)",
+    "Cybersecurity & Incident Response",
     "Product Management",
-    "Financial Modelling",
-    "Agile/SAFe Methodology",
-    "Data Analytics & BI"
+    "Vendor & Partner Management",
+    "Governance & Compliance"
   ],
   "gaps": [
-    "Hands-on Coding",
-    "Consumer Product Experience",
-    "Mobile Development",
-    "Growth Marketing",
-    "Early-stage Fundraising"
+    "Consumer Products (B2C)",
+    "Software Engineering",
+    "Venture Capital Fundraising",
+    "Deep Technical R&D",
+    "Digital Marketing",
+    "Public Market Experience"
   ]
 };
 

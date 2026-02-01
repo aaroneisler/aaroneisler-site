@@ -136,24 +136,6 @@ export const experience = [
       2,
       3
     ]
-  },
-  {
-    "id": "early-career",
-    "company": "Optus & Cisco",
-    "role": "Earlier Career",
-    "period": "2001 \u2013 2010",
-    "logo": "/logos/cisco.png",
-    "bullets": [
-      "Systems Engineer at Optus. Billable deployment across enterprise clients",
-      "TAC Engineer at Cisco. Escalation support, deep technical foundations",
-      "Where I learned the craft before leading teams"
-    ],
-    "aiContext": {},
-    "includeInPages": [
-      1,
-      2,
-      3
-    ]
   }
 ];
 

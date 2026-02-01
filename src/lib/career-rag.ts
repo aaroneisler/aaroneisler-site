@@ -3,13 +3,14 @@
  * Interfaces with career-api for context retrieval and fit assessment.
  */
 
-const CAREER_API_URL = process.env.CAREER_API_URL;
-const CAREER_API_KEY = process.env.CAREER_API_KEY;
-
 // Timeout for RAG requests (fail gracefully)
 const RAG_TIMEOUT_MS = 2000;
 
 export async function getRelevantContext(query: string): Promise<string> {
+  // Read env vars at runtime, not module load time
+  const CAREER_API_URL = process.env.CAREER_API_URL;
+  const CAREER_API_KEY = process.env.CAREER_API_KEY;
+
   if (!CAREER_API_URL || !CAREER_API_KEY) {
     console.warn('Career API not configured, using fallback');
     return '';
@@ -61,6 +62,10 @@ export async function assessFit(
   jobTitle?: string,
   company?: string
 ): Promise<AssessmentResult> {
+  // Read env vars at runtime
+  const CAREER_API_URL = process.env.CAREER_API_URL;
+  const CAREER_API_KEY = process.env.CAREER_API_KEY;
+
   if (!CAREER_API_URL || !CAREER_API_KEY) {
     throw new Error('Career API not configured');
   }

@@ -149,13 +149,13 @@ export default function ResumeView() {
       />
 
       <Job
-        title="Chief Technology Officer - Woolworths Account"
+        title="Woolworths Chief Architect / Security Practice Manager"
         company="NTT/Dimension Data"
         dates="Sep 2010 – Jun 2015"
         bullets={[
-          "Served as CTO for Australia's largest retailer, owning architecture strategy, PCI compliance, and technology roadmap across complex multi-vendor environment.",
-          "Delivered Australia's first Cisco ACI deployment ($1M CAPEX) achieving 25% OPEX reduction while generating $700K services revenue from compliance initiatives.",
-          "Grew account revenue 35% while maintaining margin through trusted advisor relationship and consistent delivery of strategic technology initiatives.",
+          "Progressed to Chief Architect for Australia's largest retailer, owning architecture strategy, PCI compliance, and technology roadmap.",
+          "Delivered Australia's first Cisco ACI deployment ($1M CAPEX) achieving 25% OPEX reduction. Managed migration to multiple new data centres.",
+          "Grew account revenue 35% while maintaining margin. Chaired Architecture Review Board implementing TOGAF-based governance framework.",
         ]}
       />
 

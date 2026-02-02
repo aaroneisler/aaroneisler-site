@@ -126,14 +126,13 @@ export const experience = [
   {
     "id": "ntt",
     "company": "NTT (Dimension Data)",
-    "role": "Security Practice Manager & Enterprise Architect",
+    "role": "Woolworths Chief Architect / Security Practice Manager",
     "period": "Sep 2010 \u2013 Jun 2015",
     "logo": "/logos/ntt.png",
     "bullets": [
-      "CTO for Woolworths. Delivered Australia's first Cisco ACI ($1M CAPEX, 25% OPEX reduction)",
-      "Achieved PCI DSS compliance generating $700K revenue",
-      "Chaired Architecture Review Board implementing TOGAF-based ADM",
-      "Increased revenue by 35% while maintaining gross profit"
+      "Progressed to Chief Architect for Australia's largest retailer, owning architecture strategy, PCI compliance, and technology roadmap.",
+      "Delivered Australia's first Cisco ACI deployment ($1M CAPEX) achieving 25% OPEX reduction. Managed migration to multiple new data centres.",
+      "Grew account revenue 35% while maintaining margin. Chaired Architecture Review Board implementing TOGAF-based governance framework."
     ],
     "aiContext": {
       "situation": "Woolworths was my account. Biggest retailer in Australia, complex environment,\ndozens of vendors, and a CTO who didn't suffer fools. The previous architect\nhad left and the relationship was shaky. They needed someone who could talk\nstrategy with the executives and still get into the technical weeds when needed.\n",

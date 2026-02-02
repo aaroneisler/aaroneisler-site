@@ -54,7 +54,7 @@ export default function ResumeView() {
           <div style={{ fontSize: '9pt', color: '#718096' }}>
             <span>Sydney, Australia</span>
             <span style={{ margin: '0 5px' }}>|</span>
-            <span>aeisler@gmail.com</span>
+            <span>aaron.eisler@madeai.com.au</span>
             <span style={{ margin: '0 5px' }}>|</span>
             <span>0429 555 885</span>
           </div>
@@ -93,8 +93,9 @@ export default function ResumeView() {
         desc="Chaired Architecture Review Boards, led Steering Committees, and delivered executive reporting to boards and senior stakeholders across financial services and enterprise clients."
       />
 
-      {/* Professional Experience */}
-      <SectionHeader style={{ marginTop: '40px' }}>Professional Experience</SectionHeader>
+      {/* Professional Experience - starts on new page */}
+      <div style={{ breakBefore: 'page', pageBreakBefore: 'always' }}>
+      <SectionHeader style={{ marginTop: '0' }}>Professional Experience</SectionHeader>
 
       <Job
         title="Principal Consultant / Founder"
@@ -135,6 +136,8 @@ export default function ResumeView() {
         ]}
       />
 
+      {/* Telstra starts on new page */}
+      <div style={{ breakBefore: 'page', pageBreakBefore: 'always' }} />
       <Job
         title="Senior Leadership Roles - Technology & Operations"
         company="Telstra"
@@ -144,7 +147,6 @@ export default function ResumeView() {
           "Served as Chief Architect for Department of Defence and Client CTO for CBA, managing critical relationships and delivering enterprise transformation programs.",
           "Won and delivered Australia's first Arista Software Defined Network ($27M) for major enterprise client, demonstrating end-to-end delivery capability at scale.",
           "Led response to cyber incidents and critical infrastructure events, demonstrating calm decision-making under pressure with clear executive communication.",
-          "Established Telstra's AI partnership with Accenture, building foundations for automation strategy that transformed enterprise service delivery capabilities.",
         ]}
       />
 
@@ -158,6 +160,7 @@ export default function ResumeView() {
           "Grew account revenue 35% while maintaining margin. Chaired Architecture Review Board implementing TOGAF-based governance framework.",
         ]}
       />
+      </div>
 
       {/* Core Competencies */}
       <SectionHeader>Core Competencies</SectionHeader>
